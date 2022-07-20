@@ -25,13 +25,12 @@ int valor;
 void __interrupt() tes(void){
     if(TMR1IF){
         PIR1bits.TMR1IF = 0; //reseta o flag da interrup??o
-        TMR1L = 0xDC;        //reinicia contagem com 3036
-        TMR1H = 0x0B; 
+        TMR1L = 0xB0;
+        TMR1H = 0x3C;
     }
-    else if ()
+    else if (INTF)
     {
-        PIR1bits.ADIF = 0;
-        valor = ADRESH;
+        INTCONbits.INTF = 0;
         
     }
     
@@ -42,7 +41,9 @@ void main(void) {
     TRISA = 0b11111111; 
     TRISB = 0b00000001; 
     TRISD = 0;
-    OPTION_REGbits.nRBPU = 0;
+    OPTION_REGbits.nRBPU = 0;   
+    OPTION_REGbits.INTEDG = 1; 
+
     
     PORTA = 0;
     PORTB = 0;
@@ -51,6 +52,7 @@ void main(void) {
     
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
+    INTCONbits.INTE = 1;
     PIE1bits.TMR1IE = 1; //ativa o timer
     //Interrupção global
     
@@ -66,8 +68,8 @@ void main(void) {
     //configs do timer
     //nosso valor inicial deverá ser 13336
     
-    TMR1L = 01100000;
-    TMR1H = 11010000;
+    TMR1L = 0xB0;
+    TMR1H = 0x3C;
     
     T1CONbits.TMR1ON = 1;
     
