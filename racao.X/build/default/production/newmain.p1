@@ -97,6 +97,36 @@ Version 4.0 HI-TECH Software Intermediate Code
 "340
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 340: extern volatile unsigned char PORTD __attribute__((address(0x008)));
 [v _PORTD `Vuc ~T0 @X0 0 e@8 ]
+"1624
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 1624:     struct {
+[s S64 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S64 . TMR1IE TMR2IE CCP1IE SSPIE TXIE RCIE ADIE PSPIE ]
+"1623
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 1623: typedef union {
+[u S63 `S64 1 ]
+[n S63 . . ]
+"1635
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 1635: extern volatile PIE1bits_t PIE1bits __attribute__((address(0x08C)));
+[v _PIE1bits `VS63 ~T0 @X0 0 e@140 ]
+"661
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 661:     struct {
+[s S25 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :2 `uc 1 ]
+[n S25 . TMR1ON TMR1CS nT1SYNC T1OSCEN T1CKPS ]
+"668
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 668:     struct {
+[s S26 :2 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
+[n S26 . . T1SYNC . T1CKPS0 T1CKPS1 ]
+"675
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 675:     struct {
+[s S27 :2 `uc 1 :1 `uc 1 ]
+[n S27 . . T1INSYNC ]
+"660
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 660: typedef union {
+[u S24 `S25 1 `S26 1 `S27 1 ]
+[n S24 . . . . ]
+"680
+[; ;C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 680: extern volatile T1CONbits_t T1CONbits __attribute__((address(0x010)));
+[v _T1CONbits `VS24 ~T0 @X0 0 e@16 ]
 "222
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 222:     struct {
 [s S8 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 :1 `uc 1 ]
@@ -678,94 +708,109 @@ Version 4.0 HI-TECH Software Intermediate Code
 "42
 [; ;newmain.c: 42: int interrupcao;
 [v _interrupcao `i ~T0 @X0 1 e ]
+"43
+[; ;newmain.c: 43: int test = 0;
+[v _test `i ~T0 @X0 1 e ]
+[i _test
+-> 0 `i
+]
 [v $root$_tes `(v ~T0 @X0 0 e ]
-"44
-[; ;newmain.c: 44: void __attribute__((picinterrupt(("")))) tes(void){
+"45
+[; ;newmain.c: 45: void __attribute__((picinterrupt(("")))) tes(void){
 [v _tes `(v ~T1 @X0 1 ef ]
 {
 [e :U _tes ]
 [f ]
-"45
-[; ;newmain.c: 45:     if(TMR1IF){
+"46
+[; ;newmain.c: 46:     if(TMR1IF){
 [e $ ! _TMR1IF 121  ]
 {
-"46
-[; ;newmain.c: 46:         PIR1bits.TMR1IF = 0;
-[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
 "47
-[; ;newmain.c: 47:         TMR1L = 0xB0;
-[e = _TMR1L -> -> 176 `i `uc ]
+[; ;newmain.c: 47:          PIR1bits.TMR1IF = 0;
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
 "48
-[; ;newmain.c: 48:         TMR1H = 0x3C;
-[e = _TMR1H -> -> 60 `i `uc ]
+[; ;newmain.c: 48:          TMR1L = 0xDC;
+[e = _TMR1L -> -> 220 `i `uc ]
+"49
+[; ;newmain.c: 49:          TMR1H = 0X0B;
+[e = _TMR1H -> -> 11 `i `uc ]
 "50
-[; ;newmain.c: 50:     }
+[; ;newmain.c: 50:          test++;
+[e ++ _test -> 1 `i ]
+"51
+[; ;newmain.c: 51:     }
 }
 [e $U 122  ]
-"51
-[; ;newmain.c: 51:     else if (INTCONbits.INTF)
+"52
+[; ;newmain.c: 52:     else if (INTCONbits.INTF)
 [e :U 121 ]
 [e $ ! != -> . . _INTCONbits 0 1 `i -> 0 `i 123  ]
-"52
-[; ;newmain.c: 52:     {
+"53
+[; ;newmain.c: 53:     {
 {
-"56
-[; ;newmain.c: 56:         INTCONbits.INTF = 0;
+"54
+[; ;newmain.c: 54:         INTCONbits.INTF = 0;
 [e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
-"57
-[; ;newmain.c: 57:         PORTDbits.RD7 = 0;
+"55
+[; ;newmain.c: 55:         PORTDbits.RD7 = 0;
 [e = . . _PORTDbits 0 7 -> -> 0 `i `uc ]
-"58
-[; ;newmain.c: 58:         Lcd_Clear();
+"56
+[; ;newmain.c: 56:         Lcd_Clear();
 [e ( _Lcd_Clear ..  ]
+"57
+[; ;newmain.c: 57:         Lcd_Set_Cursor(1,1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"58
+[; ;newmain.c: 58:         Lcd_Write_String("INTERROMPIDO...");
+[e ( _Lcd_Write_String (1 :s 1C ]
 "59
 [; ;newmain.c: 59:         interrupcao = 1;
 [e = _interrupcao -> 1 `i ]
-"60
-[; ;newmain.c: 60:     }
+"61
+[; ;newmain.c: 61:     }
 }
 [e :U 123 ]
 [e :U 122 ]
-"61
-[; ;newmain.c: 61:     return;
-[e $UE 120  ]
 "62
-[; ;newmain.c: 62: }
+[; ;newmain.c: 62:     return;
+[e $UE 120  ]
+"63
+[; ;newmain.c: 63: }
 [e :UE 120 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"65
-[; ;newmain.c: 65: void main(void) {
+"66
+[; ;newmain.c: 66: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"66
-[; ;newmain.c: 66:     TRISA = 0b11111111;
-[e = _TRISA -> -> 255 `i `uc ]
 "67
-[; ;newmain.c: 67:     TRISB = 0b00000011;
-[e = _TRISB -> -> 3 `i `uc ]
+[; ;newmain.c: 67:     TRISA = 0b11111111;
+[e = _TRISA -> -> 255 `i `uc ]
 "68
-[; ;newmain.c: 68:     TRISC = 0;
-[e = _TRISC -> -> 0 `i `uc ]
+[; ;newmain.c: 68:     TRISB = 0b00000011;
+[e = _TRISB -> -> 3 `i `uc ]
 "69
-[; ;newmain.c: 69:     TRISD = 0;
-[e = _TRISD -> -> 0 `i `uc ]
+[; ;newmain.c: 69:     TRISC = 0;
+[e = _TRISC -> -> 0 `i `uc ]
 "70
-[; ;newmain.c: 70:     OPTION_REG = 0b00111111;
-[e = _OPTION_REG -> -> 63 `i `uc ]
+[; ;newmain.c: 70:     TRISD = 0;
+[e = _TRISD -> -> 0 `i `uc ]
 "71
-[; ;newmain.c: 71:     PORTA = 0;
-[e = _PORTA -> -> 0 `i `uc ]
+[; ;newmain.c: 71:     OPTION_REG = 0b00111111;
+[e = _OPTION_REG -> -> 63 `i `uc ]
 "72
-[; ;newmain.c: 72:     PORTB = 0;
-[e = _PORTB -> -> 0 `i `uc ]
+[; ;newmain.c: 72:     PORTA = 0;
+[e = _PORTA -> -> 0 `i `uc ]
 "73
-[; ;newmain.c: 73:     PORTC = 0;
-[e = _PORTC -> -> 0 `i `uc ]
+[; ;newmain.c: 73:     PORTB = 0;
+[e = _PORTB -> -> 0 `i `uc ]
 "74
-[; ;newmain.c: 74:     PORTD = 0;
+[; ;newmain.c: 74:     PORTC = 0;
+[e = _PORTC -> -> 0 `i `uc ]
+"75
+[; ;newmain.c: 75:     PORTD = 0;
 [e = _PORTD -> -> 0 `i `uc ]
 "77
 [; ;newmain.c: 77:     INTCONbits.GIE = 1;
@@ -776,116 +821,103 @@ Version 4.0 HI-TECH Software Intermediate Code
 "79
 [; ;newmain.c: 79:     INTCONbits.INTE=1;
 [e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
-"118
-[; ;newmain.c: 118:     Lcd_Init();
-[e ( _Lcd_Init ..  ]
-"119
-[; ;newmain.c: 119:     Lcd_Clear();
-[e ( _Lcd_Clear ..  ]
-"120
-[; ;newmain.c: 120:     Lcd_Set_Cursor(1,1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"121
-[; ;newmain.c: 121:     Lcd_Write_String("SIGMA DOG");
-[e ( _Lcd_Write_String (1 :s 1C ]
-"122
-[; ;newmain.c: 122:     Lcd_Set_Cursor(2,1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"123
-[; ;newmain.c: 123:     Lcd_Write_String("GRINDSET");
-[e ( _Lcd_Write_String (1 :s 2C ]
+"85
+[; ;newmain.c: 85:     PIE1bits.TMR1IE = 1;
+[e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
+"86
+[; ;newmain.c: 86:     T1CONbits.TMR1CS = 0 ;
+[e = . . _T1CONbits 0 1 -> -> 0 `i `uc ]
+"87
+[; ;newmain.c: 87:     T1CONbits.T1CKPS0 = 1;
+[e = . . _T1CONbits 1 3 -> -> 1 `i `uc ]
+"88
+[; ;newmain.c: 88:     T1CONbits.T1CKPS1 = 1;
+[e = . . _T1CONbits 1 4 -> -> 1 `i `uc ]
+"90
+[; ;newmain.c: 90:     TMR1L = 0xDC;
+[e = _TMR1L -> -> 220 `i `uc ]
+"91
+[; ;newmain.c: 91:     TMR1H = 0X0B;
+[e = _TMR1H -> -> 11 `i `uc ]
 "124
-[; ;newmain.c: 124:     PORTDbits.RD5 = 1;
-[e = . . _PORTDbits 0 5 -> -> 1 `i `uc ]
+[; ;newmain.c: 124:     Lcd_Init();
+[e ( _Lcd_Init ..  ]
 "125
-[; ;newmain.c: 125:     while(1){
+[; ;newmain.c: 125:     Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
+"126
+[; ;newmain.c: 126:     Lcd_Set_Cursor(1,1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"127
+[; ;newmain.c: 127:     Lcd_Write_String("SIGMA DOG");
+[e ( _Lcd_Write_String (1 :s 2C ]
+"128
+[; ;newmain.c: 128:     Lcd_Set_Cursor(2,1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"129
+[; ;newmain.c: 129:     Lcd_Write_String("GRINDSET");
+[e ( _Lcd_Write_String (1 :s 3C ]
+"130
+[; ;newmain.c: 130:     PORTDbits.RD5 = 1;
+[e = . . _PORTDbits 0 5 -> -> 1 `i `uc ]
+"131
+[; ;newmain.c: 131:     while(1){
 [e :U 126 ]
 {
-"126
-[; ;newmain.c: 126:         if(interrupcao){
-[e $ ! != _interrupcao -> 0 `i 128  ]
+"132
+[; ;newmain.c: 132:         if(interrupcao == 1){
+[e $ ! == _interrupcao -> 1 `i 128  ]
 {
-"127
-[; ;newmain.c: 127:             return;
-[e $UE 124  ]
-"128
-[; ;newmain.c: 128:         }
+"133
+[; ;newmain.c: 133:             interrupcao = 0;
+[e = _interrupcao -> 0 `i ]
+"134
+[; ;newmain.c: 134:         }
 }
 [e :U 128 ]
-"129
-[; ;newmain.c: 129:         PORTDbits.RD7 = 0;
+"135
+[; ;newmain.c: 135:         PORTDbits.RD7 = 0;
 [e = . . _PORTDbits 0 7 -> -> 0 `i `uc ]
-"130
-[; ;newmain.c: 130:         if(PORTBbits.RB1 == 0){
+"136
+[; ;newmain.c: 136:         if(PORTBbits.RB1 == 0){
 [e $ ! == -> . . _PORTBbits 0 1 `i -> 0 `i 129  ]
 {
-"131
-[; ;newmain.c: 131:             Lcd_Clear();
-[e ( _Lcd_Clear ..  ]
-"132
-[; ;newmain.c: 132:             Lcd_Set_Cursor(1,1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"133
-[; ;newmain.c: 133:             Lcd_Write_String("DESPEJANDO...");
-[e ( _Lcd_Write_String (1 :s 3C ]
-"134
-[; ;newmain.c: 134:             while(PORTBbits.RB1 == 0){
-[e $U 130  ]
-[e :U 131 ]
-{
-"135
-[; ;newmain.c: 135:                 if(interrupcao){
-[e $ ! != _interrupcao -> 0 `i 133  ]
-{
-"136
-[; ;newmain.c: 136:                     return;
-[e $UE 124  ]
 "137
-[; ;newmain.c: 137:                 }
-}
-[e :U 133 ]
-"138
-[; ;newmain.c: 138:                 PORTDbits.RD7 = 1;
-[e = . . _PORTDbits 0 7 -> -> 1 `i `uc ]
-"139
-[; ;newmain.c: 139:             }
-}
-[e :U 130 ]
-"134
-[; ;newmain.c: 134:             while(PORTBbits.RB1 == 0){
-[e $ == -> . . _PORTBbits 0 1 `i -> 0 `i 131  ]
-[e :U 132 ]
-"140
-[; ;newmain.c: 140:             Lcd_Clear();
+[; ;newmain.c: 137:             Lcd_Clear();
 [e ( _Lcd_Clear ..  ]
-"141
-[; ;newmain.c: 141:             Lcd_Set_Cursor(1,1);
+"138
+[; ;newmain.c: 138:             Lcd_Set_Cursor(1,1);
 [e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"142
-[; ;newmain.c: 142:             Lcd_Write_String("SIGMA DOG");
+"139
+[; ;newmain.c: 139:             Lcd_Write_String("DESPEJANDO...");
 [e ( _Lcd_Write_String (1 :s 4C ]
+"140
+[; ;newmain.c: 140:             PORTDbits.RD7 = 1;
+[e = . . _PORTDbits 0 7 -> -> 1 `i `uc ]
+"141
+[; ;newmain.c: 141:             T1CONbits.TMR1ON = 1;
+[e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
+"142
+[; ;newmain.c: 142:             PORTDbits.RD7 = 0;
+[e = . . _PORTDbits 0 7 -> -> 0 `i `uc ]
 "143
-[; ;newmain.c: 143:             Lcd_Set_Cursor(2,1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"144
-[; ;newmain.c: 144:             Lcd_Write_String("GRINDSET");
-[e ( _Lcd_Write_String (1 :s 5C ]
-"145
-[; ;newmain.c: 145:         }
+[; ;newmain.c: 143:         }
 }
 [e :U 129 ]
-"146
-[; ;newmain.c: 146:     }
+"162
+[; ;newmain.c: 162:     }
 }
 [e :U 125 ]
 [e $U 126  ]
 [e :U 127 ]
-"147
-[; ;newmain.c: 147: }
+"164
+[; ;newmain.c: 164:     return ;
+[e $UE 124  ]
+"165
+[; ;newmain.c: 165: }
 [e :UE 124 ]
 }
-[a 2C 71 82 73 78 68 83 69 84 0 ]
-[a 5C 71 82 73 78 68 83 69 84 0 ]
-[a 1C 83 73 71 77 65 32 68 79 71 0 ]
-[a 4C 83 73 71 77 65 32 68 79 71 0 ]
-[a 3C 68 69 83 80 69 74 65 78 68 79 46 46 46 0 ]
+[a 3C 71 82 73 78 68 83 69 84 0 ]
+[a 2C 83 73 71 77 65 32 68 79 71 0 ]
+[a 4C 68 69 83 80 69 74 65 78 68 79 46 46 46 0 ]
+[a 1C 73 78 84 69 82 82 79 77 80 73 68 79 46 46 46 0 ]

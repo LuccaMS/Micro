@@ -40,23 +40,24 @@
 int valor;
 
 int interrupcao;
+int test = 0;
 
 void __interrupt() tes(void){
     if(TMR1IF){
-        PIR1bits.TMR1IF = 0; //reseta o flag da interrupcao
-        TMR1L = 0xB0;
-        TMR1H = 0x3C;
-		//valores acima irão resultar em 15536 base
+         PIR1bits.TMR1IF = 0; //reseta o flag da interrupcao
+         TMR1L = 0xDC;
+         TMR1H = 0X0B;  
+         test++;
     }
     else if (INTCONbits.INTF)
     {
-        //PIR1bits.ADIF = 0;
-        //valor = ADRESH;
-        
         INTCONbits.INTF = 0;
         motor = 0;
         Lcd_Clear();  //limpa LCD
+        Lcd_Set_Cursor(1,1);
+        Lcd_Write_String("INTERROMPIDO...");
         interrupcao = 1;
+        
     }
     return;
 }
@@ -73,30 +74,32 @@ void main(void) {
     PORTC = 0;
     PORTD = 0;
     
-    
-    INTCONbits.GIE = 1;
+    INTCONbits.GIE = 1; //ativa as interrupt
     INTCONbits.PEIE = 1;
-    INTCONbits.INTE=1;
+    INTCONbits.INTE=1; //RB0 como interrupt
     
-    /*
     // ---------TIMER--------- //
     PIE1bits.TMR1IE = 1; //ativa o timer
-    T1CONbits.TMR1CS = 0;   //Define timer 1 como temporizador (Fosc/4)
-    T1CONbits.T1CKPS0 = 1;  //bit pra configurar pre-escaler, neste caso 1:2
-    T1CONbits.T1CKPS1 = 1;  //bit pra configurar pre-escaler, neste caso 1:2
+    T1CONbits.TMR1CS = 0    ;   //Define timer 1 como temporizador (Fosc/4)
+    T1CONbits.T1CKPS0 = 1;  //bit pra configurar pre-escaler, neste caso 1:8
+    T1CONbits.T1CKPS1 = 1;  //bit pra configurar pre-escaler, neste caso 1:8
     
+    TMR1L = 0xDC;
+    TMR1H = 0X0B;
+
     //4 mhz externo / 4 logo temos 1 mhz
-    //1 mhz divido por 2 da config to T1CKPS0 + T1CKPS
-    //logo, teremos 500 khz, então, usaremos 50 mil ciclos para contarmos até 100ms, o padrão deverá ser 15336
+    //1 mhz divido por 8 da config to T1CKPS0 + T1CKPS
+    //logo, teremos 125 khz e precisaremos de 62500 ciclos para chegarmos em 500ms, 
+    //então o valor inicial será 3036
+     
     
     //configs do timer
-    //nosso valor inicial deverá ser 15336
+    //nosso valor inicial deverá ser 3036
     
-    TMR1L = 0xB0;
-    TMR1H = 0x3C;
     
     //T1CONbits.TMR1ON = 1; //liga o timer
     
+    /*
     ADCON1bits.PCFG0 = 0;
     ADCON1bits.PCFG1 = 0;
     ADCON1bits.PCFG2 = 0;
@@ -123,17 +126,27 @@ void main(void) {
     Lcd_Write_String("GRINDSET");
     resistencia = 1;
     while(1){
-        if(interrupcao){
-            return;
+        if(interrupcao == 1){
+            interrupcao = 0;
         }
         motor = 0;
         if(btn_despejo == 0){
             Lcd_Clear();  //limpa LCD
             Lcd_Set_Cursor(1,1);
             Lcd_Write_String("DESPEJANDO...");
+            motor = 1;
+            T1CONbits.TMR1ON = 1;
+            motor = 0;
+        }
+        
+        /*if(btn_despejo == 0){
+            Lcd_Clear();  //limpa LCD
+            Lcd_Set_Cursor(1,1);
+            Lcd_Write_String("DESPEJANDO...");
+            motor = 1;
             while(btn_despejo == 0){
-                if(interrupcao){
-                    return;
+                if(interrupcao == 1){
+                    interrupcao = 0;
                 }
                 motor = 1;
             }
@@ -142,6 +155,8 @@ void main(void) {
             Lcd_Write_String("SIGMA DOG");
             Lcd_Set_Cursor(2,1);
             Lcd_Write_String("GRINDSET");
-        }
+        } */
     }
+    
+    return ;
 }
