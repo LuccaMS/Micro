@@ -10,11 +10,11 @@
 ### Memory Usage ###
  Intel Hex-file ranges:
   0h - 5h		(dist/default/production\racao.X.production.hex)
-  8h - 547h		(dist/default/production\racao.X.production.hex)
+  8h - 543h		(dist/default/production\racao.X.production.hex)
   400Eh - 400Fh		(dist/default/production\racao.X.production.hex)
  Unused ranges:
   6h - 7h
-  548h - 400Dh
+  544h - 400Dh
 
 ### Hex Memory Map ###
  Legend:
@@ -107,6 +107,6 @@
 00000510 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000520 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00000530 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00000540 | H1 H1 H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- --
+00000540 | H1 H1 H1 H1 -- -- -- -- -- -- -- -- -- -- -- --
 ----------------------------------------------------------
 00004000 | -- -- -- -- -- -- -- -- -- -- -- -- -- -- H1 H1

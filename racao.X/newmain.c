@@ -48,29 +48,17 @@ void __interrupt() tes(void){
         TMR1H = 0x3C;
 		//valores acima irão resultar em 15536 base
     }
-<<<<<<< Updated upstream
-    else if (INTF)
-    {
-		//interrupção do botão
-        INTCONbits.INTF = 0;
-		Motor = 0; //desligando o motor
-=======
     else if (INTCONbits.INTF)
     {
         //PIR1bits.ADIF = 0;
         //valor = ADRESH;
->>>>>>> Stashed changes
         
         INTCONbits.INTF = 0;
         motor = 0;
         Lcd_Clear();  //limpa LCD
         interrupcao = 1;
     }
-<<<<<<< Updated upstream
-	return;
-=======
     return;
->>>>>>> Stashed changes
 }
 
 
@@ -79,14 +67,7 @@ void main(void) {
     TRISB = 0b00000011;
     TRISC = 0;
     TRISD = 0;
-<<<<<<< Updated upstream
-    OPTION_REGbits.nRBPU = 0;   
-    OPTION_REGbits.INTEDG = 1; // checar se está certo, quando ativarmos o botão terá 0
-
-    
-=======
     OPTION_REG = 0b00111111;
->>>>>>> Stashed changes
     PORTA = 0;
     PORTB = 0;
     PORTC = 0;
@@ -95,15 +76,10 @@ void main(void) {
     
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
-<<<<<<< Updated upstream
-    INTCONbits.INTE = 1; //Interrupcao global
-	
-    // ---------TIMER--------- //
-=======
     INTCONbits.INTE=1;
     
     /*
->>>>>>> Stashed changes
+    // ---------TIMER--------- //
     PIE1bits.TMR1IE = 1; //ativa o timer
     T1CONbits.TMR1CS = 0;   //Define timer 1 como temporizador (Fosc/4)
     T1CONbits.T1CKPS0 = 1;  //bit pra configurar pre-escaler, neste caso 1:2
@@ -135,11 +111,6 @@ void main(void) {
     
     ADCON1bits.ADFM = 0; //setando para 8 bits, caso queira 10 bits bote como 1
     
-<<<<<<< Updated upstream
-   
-   
-    
-=======
     ADRESH = 0x00;
     ADCON0bits.ADON = 1; //liga nosso AD
     */
@@ -151,8 +122,6 @@ void main(void) {
     Lcd_Set_Cursor(2,1);
     Lcd_Write_String("GRINDSET");
     resistencia = 1;
-    interrupcao = 0;
->>>>>>> Stashed changes
     while(1){
         if(interrupcao){
             return;

@@ -1956,8 +1956,9 @@ int interrupcao;
 void __attribute__((picinterrupt(("")))) tes(void){
     if(TMR1IF){
         PIR1bits.TMR1IF = 0;
-        TMR1L = 0xDC;
-        TMR1H = 0x0B;
+        TMR1L = 0xB0;
+        TMR1H = 0x3C;
+
     }
     else if (INTCONbits.INTF)
     {
@@ -1988,7 +1989,7 @@ void main(void) {
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
     INTCONbits.INTE=1;
-# 116 "newmain.c"
+# 118 "newmain.c"
     Lcd_Init();
     Lcd_Clear();
     Lcd_Set_Cursor(1,1);
@@ -1996,7 +1997,6 @@ void main(void) {
     Lcd_Set_Cursor(2,1);
     Lcd_Write_String("GRINDSET");
     PORTDbits.RD5 = 1;
-    interrupcao = 0;
     while(1){
         if(interrupcao){
             return;

@@ -693,198 +693,195 @@ Version 4.0 HI-TECH Software Intermediate Code
 [; ;newmain.c: 46:         PIR1bits.TMR1IF = 0;
 [e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
 "47
-[; ;newmain.c: 47:         TMR1L = 0xDC;
-[e = _TMR1L -> -> 220 `i `uc ]
+[; ;newmain.c: 47:         TMR1L = 0xB0;
+[e = _TMR1L -> -> 176 `i `uc ]
 "48
-[; ;newmain.c: 48:         TMR1H = 0x0B;
-[e = _TMR1H -> -> 11 `i `uc ]
-"49
-[; ;newmain.c: 49:     }
+[; ;newmain.c: 48:         TMR1H = 0x3C;
+[e = _TMR1H -> -> 60 `i `uc ]
+"50
+[; ;newmain.c: 50:     }
 }
 [e $U 122  ]
-"50
-[; ;newmain.c: 50:     else if (INTCONbits.INTF)
+"51
+[; ;newmain.c: 51:     else if (INTCONbits.INTF)
 [e :U 121 ]
 [e $ ! != -> . . _INTCONbits 0 1 `i -> 0 `i 123  ]
-"51
-[; ;newmain.c: 51:     {
+"52
+[; ;newmain.c: 52:     {
 {
-"55
-[; ;newmain.c: 55:         INTCONbits.INTF = 0;
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
 "56
-[; ;newmain.c: 56:         PORTDbits.RD7 = 0;
-[e = . . _PORTDbits 0 7 -> -> 0 `i `uc ]
+[; ;newmain.c: 56:         INTCONbits.INTF = 0;
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
 "57
-[; ;newmain.c: 57:         Lcd_Clear();
-[e ( _Lcd_Clear ..  ]
+[; ;newmain.c: 57:         PORTDbits.RD7 = 0;
+[e = . . _PORTDbits 0 7 -> -> 0 `i `uc ]
 "58
-[; ;newmain.c: 58:         interrupcao = 1;
-[e = _interrupcao -> 1 `i ]
+[; ;newmain.c: 58:         Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
 "59
-[; ;newmain.c: 59:     }
+[; ;newmain.c: 59:         interrupcao = 1;
+[e = _interrupcao -> 1 `i ]
+"60
+[; ;newmain.c: 60:     }
 }
 [e :U 123 ]
 [e :U 122 ]
-"60
-[; ;newmain.c: 60:     return;
-[e $UE 120  ]
 "61
-[; ;newmain.c: 61: }
+[; ;newmain.c: 61:     return;
+[e $UE 120  ]
+"62
+[; ;newmain.c: 62: }
 [e :UE 120 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"64
-[; ;newmain.c: 64: void main(void) {
+"65
+[; ;newmain.c: 65: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"65
-[; ;newmain.c: 65:     TRISA = 0b11111111;
-[e = _TRISA -> -> 255 `i `uc ]
 "66
-[; ;newmain.c: 66:     TRISB = 0b00000011;
-[e = _TRISB -> -> 3 `i `uc ]
+[; ;newmain.c: 66:     TRISA = 0b11111111;
+[e = _TRISA -> -> 255 `i `uc ]
 "67
-[; ;newmain.c: 67:     TRISC = 0;
-[e = _TRISC -> -> 0 `i `uc ]
+[; ;newmain.c: 67:     TRISB = 0b00000011;
+[e = _TRISB -> -> 3 `i `uc ]
 "68
-[; ;newmain.c: 68:     TRISD = 0;
-[e = _TRISD -> -> 0 `i `uc ]
+[; ;newmain.c: 68:     TRISC = 0;
+[e = _TRISC -> -> 0 `i `uc ]
 "69
-[; ;newmain.c: 69:     OPTION_REG = 0b00111111;
-[e = _OPTION_REG -> -> 63 `i `uc ]
+[; ;newmain.c: 69:     TRISD = 0;
+[e = _TRISD -> -> 0 `i `uc ]
 "70
-[; ;newmain.c: 70:     PORTA = 0;
-[e = _PORTA -> -> 0 `i `uc ]
+[; ;newmain.c: 70:     OPTION_REG = 0b00111111;
+[e = _OPTION_REG -> -> 63 `i `uc ]
 "71
-[; ;newmain.c: 71:     PORTB = 0;
-[e = _PORTB -> -> 0 `i `uc ]
+[; ;newmain.c: 71:     PORTA = 0;
+[e = _PORTA -> -> 0 `i `uc ]
 "72
-[; ;newmain.c: 72:     PORTC = 0;
-[e = _PORTC -> -> 0 `i `uc ]
+[; ;newmain.c: 72:     PORTB = 0;
+[e = _PORTB -> -> 0 `i `uc ]
 "73
-[; ;newmain.c: 73:     PORTD = 0;
+[; ;newmain.c: 73:     PORTC = 0;
+[e = _PORTC -> -> 0 `i `uc ]
+"74
+[; ;newmain.c: 74:     PORTD = 0;
 [e = _PORTD -> -> 0 `i `uc ]
-"76
-[; ;newmain.c: 76:     INTCONbits.GIE = 1;
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "77
-[; ;newmain.c: 77:     INTCONbits.PEIE = 1;
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+[; ;newmain.c: 77:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "78
-[; ;newmain.c: 78:     INTCONbits.INTE=1;
+[; ;newmain.c: 78:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"79
+[; ;newmain.c: 79:     INTCONbits.INTE=1;
 [e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
-"116
-[; ;newmain.c: 116:     Lcd_Init();
-[e ( _Lcd_Init ..  ]
-"117
-[; ;newmain.c: 117:     Lcd_Clear();
-[e ( _Lcd_Clear ..  ]
 "118
-[; ;newmain.c: 118:     Lcd_Set_Cursor(1,1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;newmain.c: 118:     Lcd_Init();
+[e ( _Lcd_Init ..  ]
 "119
-[; ;newmain.c: 119:     Lcd_Write_String("SIGMA DOG");
-[e ( _Lcd_Write_String (1 :s 1C ]
+[; ;newmain.c: 119:     Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
 "120
-[; ;newmain.c: 120:     Lcd_Set_Cursor(2,1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+[; ;newmain.c: 120:     Lcd_Set_Cursor(1,1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
 "121
-[; ;newmain.c: 121:     Lcd_Write_String("GRINDSET");
-[e ( _Lcd_Write_String (1 :s 2C ]
+[; ;newmain.c: 121:     Lcd_Write_String("SIGMA DOG");
+[e ( _Lcd_Write_String (1 :s 1C ]
 "122
-[; ;newmain.c: 122:     PORTDbits.RD5 = 1;
-[e = . . _PORTDbits 0 5 -> -> 1 `i `uc ]
+[; ;newmain.c: 122:     Lcd_Set_Cursor(2,1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
 "123
-[; ;newmain.c: 123:     interrupcao = 0;
-[e = _interrupcao -> 0 `i ]
+[; ;newmain.c: 123:     Lcd_Write_String("GRINDSET");
+[e ( _Lcd_Write_String (1 :s 2C ]
 "124
-[; ;newmain.c: 124:     while(1){
+[; ;newmain.c: 124:     PORTDbits.RD5 = 1;
+[e = . . _PORTDbits 0 5 -> -> 1 `i `uc ]
+"125
+[; ;newmain.c: 125:     while(1){
 [e :U 126 ]
 {
-"125
-[; ;newmain.c: 125:         if(interrupcao){
+"126
+[; ;newmain.c: 126:         if(interrupcao){
 [e $ ! != _interrupcao -> 0 `i 128  ]
 {
-"126
-[; ;newmain.c: 126:             return;
-[e $UE 124  ]
 "127
-[; ;newmain.c: 127:         }
+[; ;newmain.c: 127:             return;
+[e $UE 124  ]
+"128
+[; ;newmain.c: 128:         }
 }
 [e :U 128 ]
-"128
-[; ;newmain.c: 128:         PORTDbits.RD7 = 0;
-[e = . . _PORTDbits 0 7 -> -> 0 `i `uc ]
 "129
-[; ;newmain.c: 129:         if(PORTBbits.RB1 == 0){
+[; ;newmain.c: 129:         PORTDbits.RD7 = 0;
+[e = . . _PORTDbits 0 7 -> -> 0 `i `uc ]
+"130
+[; ;newmain.c: 130:         if(PORTBbits.RB1 == 0){
 [e $ ! == -> . . _PORTBbits 0 1 `i -> 0 `i 129  ]
 {
-"130
-[; ;newmain.c: 130:             Lcd_Clear();
-[e ( _Lcd_Clear ..  ]
 "131
-[; ;newmain.c: 131:             Lcd_Set_Cursor(1,1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;newmain.c: 131:             Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
 "132
-[; ;newmain.c: 132:             Lcd_Write_String("DESPEJANDO...");
-[e ( _Lcd_Write_String (1 :s 3C ]
+[; ;newmain.c: 132:             Lcd_Set_Cursor(1,1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
 "133
-[; ;newmain.c: 133:             while(PORTBbits.RB1 == 0){
+[; ;newmain.c: 133:             Lcd_Write_String("DESPEJANDO...");
+[e ( _Lcd_Write_String (1 :s 3C ]
+"134
+[; ;newmain.c: 134:             while(PORTBbits.RB1 == 0){
 [e $U 130  ]
 [e :U 131 ]
 {
-"134
-[; ;newmain.c: 134:                 if(interrupcao){
+"135
+[; ;newmain.c: 135:                 if(interrupcao){
 [e $ ! != _interrupcao -> 0 `i 133  ]
 {
-"135
-[; ;newmain.c: 135:                     return;
-[e $UE 124  ]
 "136
-[; ;newmain.c: 136:                 }
+[; ;newmain.c: 136:                     return;
+[e $UE 124  ]
+"137
+[; ;newmain.c: 137:                 }
 }
 [e :U 133 ]
-"137
-[; ;newmain.c: 137:                 PORTDbits.RD7 = 1;
-[e = . . _PORTDbits 0 7 -> -> 1 `i `uc ]
 "138
-[; ;newmain.c: 138:             }
+[; ;newmain.c: 138:                 PORTDbits.RD7 = 1;
+[e = . . _PORTDbits 0 7 -> -> 1 `i `uc ]
+"139
+[; ;newmain.c: 139:             }
 }
 [e :U 130 ]
-"133
-[; ;newmain.c: 133:             while(PORTBbits.RB1 == 0){
+"134
+[; ;newmain.c: 134:             while(PORTBbits.RB1 == 0){
 [e $ == -> . . _PORTBbits 0 1 `i -> 0 `i 131  ]
 [e :U 132 ]
-"139
-[; ;newmain.c: 139:             Lcd_Clear();
-[e ( _Lcd_Clear ..  ]
 "140
-[; ;newmain.c: 140:             Lcd_Set_Cursor(1,1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;newmain.c: 140:             Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
 "141
-[; ;newmain.c: 141:             Lcd_Write_String("SIGMA DOG");
-[e ( _Lcd_Write_String (1 :s 4C ]
+[; ;newmain.c: 141:             Lcd_Set_Cursor(1,1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
 "142
-[; ;newmain.c: 142:             Lcd_Set_Cursor(2,1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+[; ;newmain.c: 142:             Lcd_Write_String("SIGMA DOG");
+[e ( _Lcd_Write_String (1 :s 4C ]
 "143
-[; ;newmain.c: 143:             Lcd_Write_String("GRINDSET");
-[e ( _Lcd_Write_String (1 :s 5C ]
+[; ;newmain.c: 143:             Lcd_Set_Cursor(2,1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
 "144
-[; ;newmain.c: 144:         }
+[; ;newmain.c: 144:             Lcd_Write_String("GRINDSET");
+[e ( _Lcd_Write_String (1 :s 5C ]
+"145
+[; ;newmain.c: 145:         }
 }
 [e :U 129 ]
-"145
-[; ;newmain.c: 145:     }
+"146
+[; ;newmain.c: 146:     }
 }
 [e :U 125 ]
 [e $U 126  ]
 [e :U 127 ]
-"146
-[; ;newmain.c: 146: }
+"147
+[; ;newmain.c: 147: }
 [e :UE 124 ]
 }
 [a 2C 71 82 73 78 68 83 69 84 0 ]

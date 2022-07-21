@@ -30,7 +30,7 @@
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
 "44 C:\Users\Mathe\Documents\UFSC\Micro\racao.X\newmain.c
 [v _tes tes `II(v  1 e 1 0 ]
-"64
+"65
 [v _main main `(v  1 e 1 0 ]
 "166 C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
@@ -123,10 +123,10 @@
 [v _TMR1IF TMR1IF `VEb  1 e 0 @96 ]
 "42 C:\Users\Mathe\Documents\UFSC\Micro\racao.X\newmain.c
 [v _interrupcao interrupcao `i  1 e 2 0 ]
-"64
+"65
 [v _main main `(v  1 e 1 0 ]
 {
-"146
+"147
 } 0
 "96 C:\Users\Mathe\Documents\UFSC\Micro\racao.X/LCD.h
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
@@ -199,7 +199,7 @@
 "44 C:\Users\Mathe\Documents\UFSC\Micro\racao.X\newmain.c
 [v _tes tes `II(v  1 e 1 0 ]
 {
-"61
+"62
 } 0
 "34 C:\Users\Mathe\Documents\UFSC\Micro\racao.X/LCD.h
 [v i1_Lcd_Clear Lcd_Clear `(v  1 e 1 0 ]
