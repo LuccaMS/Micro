@@ -24,16 +24,19 @@ int valor;
 
 void __interrupt() tes(void){
     if(TMR1IF){
-        PIR1bits.TMR1IF = 0; //reseta o flag da interrup??o
+        PIR1bits.TMR1IF = 0; //reseta o flag da interrupcao
         TMR1L = 0xB0;
         TMR1H = 0x3C;
+		//valores acima irão resultar em 15536 base
     }
     else if (INTF)
     {
+		//interrupção do botão
         INTCONbits.INTF = 0;
+		Motor = 0; //desligando o motor
         
     }
-    
+	return;
 }
 
 
@@ -42,7 +45,7 @@ void main(void) {
     TRISB = 0b00000001; 
     TRISD = 0;
     OPTION_REGbits.nRBPU = 0;   
-    OPTION_REGbits.INTEDG = 1; 
+    OPTION_REGbits.INTEDG = 1; // checar se está certo, quando ativarmos o botão terá 0
 
     
     PORTA = 0;
@@ -52,40 +55,42 @@ void main(void) {
     
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
-    INTCONbits.INTE = 1;
+    INTCONbits.INTE = 1; //Interrupcao global
+	
+    // ---------TIMER--------- //
     PIE1bits.TMR1IE = 1; //ativa o timer
-    //Interrupção global
-    
     T1CONbits.TMR1CS = 0;   //Define timer 1 como temporizador (Fosc/4)
-    T1CONbits.T1CKPS0 = 1;  //bit pra configurar pre-escaler, nesta caso 1:8
-    T1CONbits.T1CKPS1 = 1;  //bit pra configurar pre-escaler, nesta caso 1:8
-    
+    T1CONbits.T1CKPS0 = 1;  //bit pra configurar pre-escaler, neste caso 1:2
+    T1CONbits.T1CKPS1 = 1;  //bit pra configurar pre-escaler, neste caso 1:2
     
     //4 mhz externo / 4 logo temos 1 mhz
-    //1 mhz divido por 1 da config to T1CKPS0 + T1CKPS
-    //logo, teremos 500 khz, então, usaremos 50 mil ciclos para contarmos até 100ms, o padrão deverá ser 13336
+    //1 mhz divido por 2 da config to T1CKPS0 + T1CKPS
+    //logo, teremos 500 khz, então, usaremos 50 mil ciclos para contarmos até 100ms, o padrão deverá ser 15336
     
     //configs do timer
-    //nosso valor inicial deverá ser 13336
+    //nosso valor inicial deverá ser 15336
     
     TMR1L = 0xB0;
     TMR1H = 0x3C;
     
-    T1CONbits.TMR1ON = 1;
+    //T1CONbits.TMR1ON = 1; //liga o timer
     
     ADCON1bits.PCFG0 = 0;
     ADCON1bits.PCFG1 = 0;
     ADCON1bits.PCFG2 = 0;
     ADCON1bits.PCFG3 = 0;
-    //Configs dos AD
+	// ---------TIMER--------- //
+	
+	
+    //Configs dos AD, desta maneira todos os AN0 até AN7 serão Analogicos
     
     ADCON0bits.ADCS0 = 0  ;   
     ADCON0bits.ADCS1 = 0  ;   
     
-    ADCON1bits.ADFM = 0; //setando para 8 bits
+    ADCON1bits.ADFM = 0; //setando para 8 bits, caso queira 10 bits bote como 1
     
-    ADRESH = 0x00;
-    ADCON0bits.ADON = 1; //liga nosso AD
+   
+   
     
     while(1){
         
