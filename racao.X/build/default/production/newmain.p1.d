@@ -1,2 +1,3 @@
 build/default/production/newmain.p1:  \
-newmain.c 
+newmain.c  \
+LCD.h 

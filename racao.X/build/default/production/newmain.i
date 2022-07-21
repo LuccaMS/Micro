@@ -22,8 +22,8 @@ extern double __fpnormalize(double);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\xc8debug.h" 1 3
-# 13 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\xc8debug.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\xc8debug.h" 1 3
+# 13 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\xc8debug.h" 3
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 # 24 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
@@ -1726,7 +1726,7 @@ extern __bank0 __bit __timeout;
 # 8 "newmain.c" 2
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdio.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 1 3
 
 
 
@@ -1735,17 +1735,17 @@ extern __bank0 __bit __timeout;
 
 
 typedef unsigned size_t;
-# 4 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdio.h" 2 3
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
 
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\__null.h" 1 3
-# 5 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdio.h" 2 3
+# 5 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
 
 
 
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdarg.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdarg.h" 1 3
 
 
 
@@ -1759,15 +1759,15 @@ extern void * __va_start(void);
 
 #pragma intrinsic(__va_arg)
 extern void * __va_arg(void *, ...);
-# 11 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdio.h" 2 3
-# 43 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdio.h" 3
+# 11 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
+# 43 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 3
 struct __prbuf
 {
  char * ptr;
  void (* func)(char);
 };
-# 85 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdio.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\conio.h" 1 3
+# 85 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\conio.h" 1 3
 
 
 
@@ -1775,10 +1775,10 @@ struct __prbuf
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\errno.h" 1 3
-# 29 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\errno.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\errno.h" 1 3
+# 29 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\errno.h" 3
 extern int errno;
-# 8 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\conio.h" 2 3
+# 8 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\conio.h" 2 3
 
 
 
@@ -1796,7 +1796,7 @@ extern __bit kbhit(void);
 
 extern char * cgets(char *);
 extern void cputs(const char *);
-# 85 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdio.h" 2 3
+# 85 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
 
 
 
@@ -1806,7 +1806,7 @@ extern int cprintf(char *, ...);
 
 
 extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-# 180 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdio.h" 3
+# 180 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 3
 #pragma printf_check(vprintf) const
 #pragma printf_check(vsprintf) const
 
@@ -1826,48 +1826,197 @@ extern int printf(const char *, ...);
 # 10 "newmain.c" 2
 
 
+
 #pragma config WDTE = OFF
 #pragma config FOSC = HS
 #pragma config PWRTE = ON
 #pragma config BOREN = ON
+# 38 "newmain.c"
+# 1 "./LCD.h" 1
 
+
+void Lcd_Port(char a)
+{
+ if(a & 1)
+  RC4 = 1;
+ else
+  RC4 = 0;
+
+ if(a & 2)
+  RC5 = 1;
+ else
+  RC5 = 0;
+
+ if(a & 4)
+  RC6 = 1;
+ else
+  RC6 = 0;
+
+ if(a & 8)
+  RC7 = 1;
+ else
+  RC7 = 0;
+}
+void Lcd_Cmd(char a)
+{
+ RC0 = 0;
+ Lcd_Port(a);
+ RC2 = 1;
+        _delay((unsigned long)((4)*(4000000/4000.0)));
+        RC2 = 0;
+}
+
+void Lcd_Clear()
+{
+ Lcd_Cmd(0);
+ Lcd_Cmd(1);
+}
+
+void Lcd_Set_Cursor(char a, char b)
+{
+ char temp,z,y;
+ if(a == 1)
+ {
+   temp = 0x80 + b - 1;
+  z = temp>>4;
+  y = temp & 0x0F;
+  Lcd_Cmd(z);
+  Lcd_Cmd(y);
+ }
+ else if(a == 2)
+ {
+  temp = 0xC0 + b - 1;
+  z = temp>>4;
+  y = temp & 0x0F;
+  Lcd_Cmd(z);
+  Lcd_Cmd(y);
+ }
+}
+
+void Lcd_Init()
+{
+  Lcd_Port(0x00);
+   _delay((unsigned long)((20)*(4000000/4000.0)));
+  Lcd_Cmd(0x03);
+ _delay((unsigned long)((5)*(4000000/4000.0)));
+  Lcd_Cmd(0x03);
+ _delay((unsigned long)((11)*(4000000/4000.0)));
+  Lcd_Cmd(0x03);
+
+  Lcd_Cmd(0x02);
+  Lcd_Cmd(0x02);
+  Lcd_Cmd(0x08);
+  Lcd_Cmd(0x00);
+  Lcd_Cmd(0x0C);
+  Lcd_Cmd(0x00);
+  Lcd_Cmd(0x06);
+}
+
+void Lcd_Write_Char(char a)
+{
+   char temp,y;
+   temp = a&0x0F;
+   y = a&0xF0;
+   RC0 = 1;
+   Lcd_Port(y>>4);
+   RC2 = 1;
+   _delay((unsigned long)((40)*(4000000/4000000.0)));
+   RC2 = 0;
+   Lcd_Port(temp);
+   RC2 = 1;
+   _delay((unsigned long)((40)*(4000000/4000000.0)));
+   RC2 = 0;
+}
+
+void Lcd_Write_String(char *a)
+{
+ int i;
+ for(i=0;a[i]!='\0';i++)
+    Lcd_Write_Char(a[i]);
+}
+
+void Lcd_Shift_Right()
+{
+ Lcd_Cmd(0x01);
+ Lcd_Cmd(0x0C);
+}
+
+void Lcd_Shift_Left()
+{
+ Lcd_Cmd(0x01);
+ Lcd_Cmd(0x08);
+}
+# 38 "newmain.c" 2
 
 
 int valor;
 
+int interrupcao;
+
 void __attribute__((picinterrupt(("")))) tes(void){
-    if (ADIF)
-    {
-        PIR1bits.ADIF = 0;
-        valor = ADRESH;
-
+    if(TMR1IF){
+        PIR1bits.TMR1IF = 0;
+        TMR1L = 0xDC;
+        TMR1H = 0x0B;
     }
+    else if (INTCONbits.INTF)
+    {
 
+
+
+        INTCONbits.INTF = 0;
+        PORTDbits.RD7 = 0;
+        Lcd_Clear();
+        interrupcao = 1;
+    }
+    return;
 }
 
 
 void main(void) {
     TRISA = 0b11111111;
-    TRISB = 0b00000001;
-    OPTION_REGbits.nRBPU = 0;
-
+    TRISB = 0b00000011;
+    TRISC = 0;
+    TRISD = 0;
+    OPTION_REG = 0b00111111;
     PORTA = 0;
     PORTB = 0;
+    PORTC = 0;
+    PORTD = 0;
 
 
     INTCONbits.GIE = 1;
     INTCONbits.PEIE = 1;
-    PIE1bits.ADIE = 1;
-
-
-    ADCON1bits.PCFG0 = 0;
-    ADCON1bits.PCFG1 = 0;
-    ADCON1bits.PCFG2 = 0;
-    ADCON1bits.PCFG3 = 0;
-
+    INTCONbits.INTE=1;
+# 116 "newmain.c"
+    Lcd_Init();
+    Lcd_Clear();
+    Lcd_Set_Cursor(1,1);
+    Lcd_Write_String("SIGMA DOG");
+    Lcd_Set_Cursor(2,1);
+    Lcd_Write_String("GRINDSET");
+    PORTDbits.RD5 = 1;
+    interrupcao = 0;
     while(1){
-
+        if(interrupcao){
+            return;
+        }
+        PORTDbits.RD7 = 0;
+        if(PORTBbits.RB1 == 0){
+            Lcd_Clear();
+            Lcd_Set_Cursor(1,1);
+            Lcd_Write_String("DESPEJANDO...");
+            while(PORTBbits.RB1 == 0){
+                if(interrupcao){
+                    return;
+                }
+                PORTDbits.RD7 = 1;
+            }
+            Lcd_Clear();
+            Lcd_Set_Cursor(1,1);
+            Lcd_Write_String("SIGMA DOG");
+            Lcd_Set_Cursor(2,1);
+            Lcd_Write_String("GRINDSET");
+        }
     }
-
-    return;
 }
