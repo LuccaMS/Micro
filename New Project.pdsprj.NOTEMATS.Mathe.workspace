@@ -1,15 +1,14 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <WORKSPACE>
- <FRAME activewindow="1">
+ <FRAME activewindow="0">
   <PLACEMENT>2c00000002000000030000000083ffff0083ffffffffffffffffffff2e00000015000000580600000b040000</PLACEMENT>
   <WINDOW type="default" module="ISIS"/>
-  <WINDOW type="default" module="VSMDEBUG"/>
  </FRAME>
  <MODULE name="VSMDEBUG">
   <PWI>
-   <POPUP w="800" x="252" flags="00000003" y="136" h="826" pid="0" iid="-1">
+   <POPUP w="800" x="252" flags="00000002" y="136" h="826" pid="0" iid="-1">
     <PROPERTIES>
-     <ITEM name="Message Column Width">550</ITEM>
+     <ITEM name="Message Column Width">671</ITEM>
      <ITEM name="ShowGrid">No</ITEM>
      <ITEM name="Source Column Width">100</ITEM>
      <ITEM name="Time Column Width">120</ITEM>
@@ -69,7 +68,7 @@
    <POPUP w="114" x="208" flags="00000008" y="270" h="127" pid="7" iid="1">
     <PROPERTIES/>
    </POPUP>
-   <POPUP w="8" x="228" flags="80000002" y="290" h="8" pid="8" iid="1">
+   <POPUP w="8" x="228" flags="00000002" y="290" h="8" pid="8" iid="1">
     <PROPERTIES>
      <ITEM name="DataType">2</ITEM>
      <ITEM name="DispChars">Yes</ITEM>
@@ -79,11 +78,11 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="600" x="274" flags="0000002a" y="180" h="400" pid="1" iid="1">
+   <POPUP w="690" x="118" flags="0000002a" y="114" h="703" pid="1" iid="1">
     <PROPERTIES>
-     <ITEM name="Breakpoint 0">"",00AA,0000,282A,6216,1
+     <ITEM name="Breakpoint 0">"",006E,0000,45D4,6216,1
 </ITEM>
-     <ITEM name="Breakpoint 1">"",00B2,0000,8786,6216,1
+     <ITEM name="Breakpoint 1">"",00C3,0000,3B52,6216,-1
 </ITEM>
      <ITEM name="Breakpoint 2">"",01DD,0000,FDF0,6216,1
 </ITEM>
@@ -98,7 +97,7 @@
      <ITEM name="nBreakpoints">0</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="417" x="1349" flags="0000000a" y="304" h="497" pid="2" iid="1">
+   <POPUP w="417" x="1495" flags="0000000a" y="81" h="497" pid="2" iid="1">
     <PROPERTIES>
      <ITEM name="Address Column Width">96</ITEM>
      <ITEM name="AutoResize">No</ITEM>

@@ -22,8 +22,8 @@ extern double __fpnormalize(double);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\xc8debug.h" 1 3
-# 13 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\xc8debug.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\xc8debug.h" 1 3
+# 13 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\xc8debug.h" 3
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 # 24 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
@@ -1726,7 +1726,7 @@ extern __bank0 __bit __timeout;
 # 8 "newmain.c" 2
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdio.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 1 3
 
 
 
@@ -1735,17 +1735,17 @@ extern __bank0 __bit __timeout;
 
 
 typedef unsigned size_t;
-# 4 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdio.h" 2 3
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
 
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\__null.h" 1 3
-# 5 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdio.h" 2 3
+# 5 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
 
 
 
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdarg.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdarg.h" 1 3
 
 
 
@@ -1759,15 +1759,15 @@ extern void * __va_start(void);
 
 #pragma intrinsic(__va_arg)
 extern void * __va_arg(void *, ...);
-# 11 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdio.h" 2 3
-# 43 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdio.h" 3
+# 11 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
+# 43 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 3
 struct __prbuf
 {
  char * ptr;
  void (* func)(char);
 };
-# 85 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdio.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\conio.h" 1 3
+# 85 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\conio.h" 1 3
 
 
 
@@ -1775,10 +1775,10 @@ struct __prbuf
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\errno.h" 1 3
-# 29 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\errno.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\errno.h" 1 3
+# 29 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\errno.h" 3
 extern int errno;
-# 8 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\conio.h" 2 3
+# 8 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\conio.h" 2 3
 
 
 
@@ -1796,7 +1796,7 @@ extern __bit kbhit(void);
 
 extern char * cgets(char *);
 extern void cputs(const char *);
-# 85 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdio.h" 2 3
+# 85 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
 
 
 
@@ -1806,7 +1806,7 @@ extern int cprintf(char *, ...);
 
 
 extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-# 180 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdio.h" 3
+# 180 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 3
 #pragma printf_check(vprintf) const
 #pragma printf_check(vsprintf) const
 
@@ -1831,7 +1831,7 @@ extern int printf(const char *, ...);
 #pragma config FOSC = HS
 #pragma config PWRTE = ON
 #pragma config BOREN = ON
-# 38 "newmain.c"
+# 39 "newmain.c"
 # 1 "./LCD.h" 1
 
 
@@ -1946,13 +1946,13 @@ void Lcd_Shift_Left()
  Lcd_Cmd(0x01);
  Lcd_Cmd(0x08);
 }
-# 38 "newmain.c" 2
+# 39 "newmain.c" 2
 
 
 int peso_cambuca = 0;
 int peso_estoque = 0;
 int valor;
-int aux_despejo;
+int aux_timer = 0;
 int interrupcao;
 int conta = 0;
 
@@ -1965,7 +1965,7 @@ void __attribute__((picinterrupt(("")))) tes(void){
         if(conta == 8){
             T1CONbits.TMR1ON = 0;
             conta = 0;
-            aux_despejo = 1;
+            aux_timer = 1;
         }
 
     }
@@ -1975,14 +1975,15 @@ void __attribute__((picinterrupt(("")))) tes(void){
         PORTDbits.RD7 = 0;
         Lcd_Clear();
         Lcd_Set_Cursor(1,1);
-        Lcd_Write_String("INTERROMPIDO...");
+        Lcd_Write_String("FUNCIONAMENTO");
+        Lcd_Set_Cursor(2,1);
+        Lcd_Write_String("INTERROMPIDO");
         interrupcao = 1;
-        aux_despejo = 1;
     }
     return;
 }
 
-int PesoCambuca(){
+int PesoEstoque(){
 
     int peso;
     _delay((unsigned long)((10)*(4000000/4000000.0)));
@@ -1997,7 +1998,7 @@ int PesoCambuca(){
     peso = ADRESH;
     return peso;
 }
-int PesoEstoque(){
+int PesoCambuca(){
 
     int peso;
     _delay((unsigned long)((10)*(4000000/4000000.0)));
@@ -2023,7 +2024,7 @@ void Lcd_Padrao(){
 
 void main(void) {
     TRISA = 0b11111111;
-    TRISB = 0b00000011;
+    TRISB = 0b00000111;
     TRISC = 0;
     TRISD = 0;
     OPTION_REG = 0b00111111;
@@ -2071,30 +2072,21 @@ void main(void) {
     Lcd_Padrao();
     PORTDbits.RD5 = 1;
     interrupcao = 0;
-    aux_despejo = 0;
+    aux_timer = 0;
     while(1){
-       peso_cambuca = PesoCambuca();
-       peso_estoque = PesoEstoque();
-        if(interrupcao == 1){
-            interrupcao = 0;
-            _delay((unsigned long)((2000)*(4000000/4000.0)));
-            Lcd_Padrao();
+        while(interrupcao == 1){
+            if(PORTBbits.RB1 == 0){
+                interrupcao = 0;
+                Lcd_Padrao();
+            }
         }
-       if(peso_cambuca <= 51)
-       {
-           PORTDbits.RD6 = 1 ;
-           _delay((unsigned long)((1000)*(4000000/4000.0)));
-           PORTDbits.RD6 = 0;
-       }
-
-        PORTDbits.RD7 = 0;
-        if(PORTBbits.RB1 == 0){
-            aux_despejo = 0;
+        if(PORTBbits.RB2 == 0){
+            aux_timer = 0;
             Lcd_Clear();
             Lcd_Set_Cursor(1,1);
             Lcd_Write_String("DESPEJANDO...");
             T1CONbits.TMR1ON = 1;
-            while (aux_despejo == 0){
+            while (aux_timer == 0 && interrupcao == 0){
                 PORTDbits.RD7 = 1;
             };
             PORTDbits.RD7 = 0;
@@ -2102,10 +2094,53 @@ void main(void) {
                 Lcd_Clear();
                 Lcd_Set_Cursor(1,1);
                 Lcd_Write_String("RACAO COLOCADA.");
+                _delay((unsigned long)((2000)*(4000000/4000.0)));
+                Lcd_Padrao();
             }
-            _delay((unsigned long)((2000)*(4000000/4000.0)));
-            Lcd_Padrao();
         }
+        if(PesoCambuca()<= 51 && PesoEstoque() > 51 && interrupcao == 0){
+            Lcd_Clear();
+            Lcd_Set_Cursor(1,1);
+            Lcd_Write_String("DESPEJANDO...");
+            while(PesoCambuca() <= 204 && PesoEstoque() > 51){
+                if(interrupcao == 1){
+                    break;
+                }
+                PORTDbits.RD7 = 1;
+            }
+            if(interrupcao == 0){
+                PORTDbits.RD7 = 0;
+                Lcd_Clear();
+                Lcd_Set_Cursor(1,1);
+                Lcd_Write_String("RACAO COLOCADA.");
+                _delay((unsigned long)((2000)*(4000000/4000.0)));
+                Lcd_Padrao();
+            }
+        }
+       if(PesoEstoque() <= 51)
+       {
+           aux_timer = 0;
+           PORTDbits.RD6 = 1;
+           Lcd_Clear();
+           Lcd_Set_Cursor(1,1);
+           Lcd_Write_String("ESTOQUE EM NIVEL");
+           Lcd_Set_Cursor(2,1);
+           Lcd_Write_String("BAIXO...");
+           T1CONbits.TMR1ON = 1;
+           while(aux_timer == 0 && PORTBbits.RB2 == 1){
+               if(interrupcao == 1){
+                    break;
+               }
+               else if(PesoEstoque() > 51){
+                   break;
+               }
+            };
+           PORTDbits.RD6 = 0;
+           if(interrupcao == 0){
+                Lcd_Padrao();
+                _delay((unsigned long)((2000)*(4000000/4000.0)));
+           }
+       }
     }
     return;
 }

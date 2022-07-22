@@ -20,7 +20,8 @@
 #define motor PORTDbits.RD7
 #define buzzer PORTDbits.RD6
 #define btn_emergencia PORTBbits.RB0
-#define btn_despejo PORTBbits.RB1
+#define btn_reinicio PORTBbits.RB1
+#define btn_despejo PORTBbits.RB2
 #define resistencia PORTDbits.RD5
 
 /**
@@ -40,7 +41,7 @@
 int peso_cambuca = 0;
 int peso_estoque = 0;
 int valor;
-int aux_despejo;
+int aux_timer = 0;
 int interrupcao;
 int conta = 0;
 
@@ -53,7 +54,7 @@ void __interrupt() tes(void){
         if(conta == 8){
             T1CONbits.TMR1ON = 0;
             conta = 0;
-            aux_despejo = 1;
+            aux_timer = 1;
         }
         
     }
@@ -63,14 +64,15 @@ void __interrupt() tes(void){
         motor = 0;
         Lcd_Clear();  //limpa LCD
         Lcd_Set_Cursor(1,1);
-        Lcd_Write_String("INTERROMPIDO...");
+        Lcd_Write_String("FUNCIONAMENTO");
+        Lcd_Set_Cursor(2,1);
+        Lcd_Write_String("INTERROMPIDO");
         interrupcao = 1;
-        aux_despejo = 1;
     }
     return;
 }
 
-int PesoCambuca(){
+int PesoEstoque(){
      //Seleciona canal de entrada 0 como entrada anal?gica
     int peso;
     __delay_us(10);
@@ -85,7 +87,7 @@ int PesoCambuca(){
     peso = ADRESH;     // passa valores convertido do reg para a vari?vel
     return peso;
 }
-int PesoEstoque(){
+int PesoCambuca(){
      //Seleciona canal de entrada 0 como entrada anal?gica
     int peso;
     __delay_us(10);
@@ -111,7 +113,7 @@ void Lcd_Padrao(){
 
 void main(void) {
     TRISA = 0b11111111; 
-    TRISB = 0b00000011;
+    TRISB = 0b00000111;
     TRISC = 0;
     TRISD = 0;
     OPTION_REG = 0b00111111;
@@ -159,30 +161,21 @@ void main(void) {
     Lcd_Padrao();
     resistencia = 1;
     interrupcao = 0;
-    aux_despejo = 0;
+    aux_timer = 0;
     while(1){
-       peso_cambuca = PesoCambuca();
-       peso_estoque = PesoEstoque();
-        if(interrupcao == 1){
-            interrupcao = 0;
-            __delay_ms(2000);
-            Lcd_Padrao();
+        while(interrupcao == 1){
+            if(btn_reinicio == 0){
+                interrupcao = 0;
+                Lcd_Padrao();
+            }
         }
-       if(peso_cambuca <= 51)
-       {
-           buzzer = 1 ;
-           __delay_ms(1000);
-           buzzer = 0;
-       }
-       
-        motor = 0;
         if(btn_despejo == 0){
-            aux_despejo = 0;
+            aux_timer = 0;
             Lcd_Clear();  //limpa LCD
             Lcd_Set_Cursor(1,1);
             Lcd_Write_String("DESPEJANDO...");
             T1CONbits.TMR1ON = 1;
-            while (aux_despejo == 0){
+            while (aux_timer == 0 && interrupcao == 0){
                 motor = 1;
             };
             motor = 0;
@@ -190,10 +183,53 @@ void main(void) {
                 Lcd_Clear();  //limpa LCD
                 Lcd_Set_Cursor(1,1);
                 Lcd_Write_String("RACAO COLOCADA.");
-            }
-            __delay_ms(2000);
-            Lcd_Padrao();
+                __delay_ms(2000);
+                Lcd_Padrao();
+            }     
         }
+        if(PesoCambuca()<= 51 && PesoEstoque() > 51 && interrupcao == 0){
+            Lcd_Clear();  //limpa LCD
+            Lcd_Set_Cursor(1,1);
+            Lcd_Write_String("DESPEJANDO...");
+            while(PesoCambuca() <= 204 && PesoEstoque() > 51){ //80% e 20%
+                if(interrupcao == 1){
+                    break;
+                }
+                motor = 1;
+            }
+            if(interrupcao == 0){
+                motor = 0;
+                Lcd_Clear();  //limpa LCD
+                Lcd_Set_Cursor(1,1);
+                Lcd_Write_String("RACAO COLOCADA.");
+                __delay_ms(2000);
+                Lcd_Padrao();
+            } 
+        }
+       if(PesoEstoque() <= 51)
+       {
+           aux_timer = 0;
+           buzzer = 1;
+           Lcd_Clear();  //limpa LCD
+           Lcd_Set_Cursor(1,1);
+           Lcd_Write_String("ESTOQUE EM NIVEL");
+           Lcd_Set_Cursor(2,1);
+           Lcd_Write_String("BAIXO...");
+           T1CONbits.TMR1ON = 1;
+           while(aux_timer == 0 && btn_despejo == 1){
+               if(interrupcao == 1){
+                    break;
+               }
+               else if(PesoEstoque() > 51){
+                   break;
+               }
+            };
+           buzzer = 0;
+           if(interrupcao == 0){
+                Lcd_Padrao();
+                __delay_ms(2000);
+           }
+       }
     }
     return;
 }
