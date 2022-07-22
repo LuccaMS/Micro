@@ -168,6 +168,13 @@ void main(void) {
             __delay_ms(2000);
             Lcd_Padrao();
         }
+       if(peso_cambuca <= 51)
+       {
+           buzzer = 1 ;
+           __delay_ms(1000);
+           buzzer = 0;
+       }
+       
         motor = 0;
         if(btn_despejo == 0){
             aux_despejo = 0;
