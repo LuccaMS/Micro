@@ -70,6 +70,37 @@ void __interrupt() tes(void){
     return;
 }
 
+int PesoCambuca(){
+     //Seleciona canal de entrada 0 como entrada anal?gica
+    int peso;
+    __delay_us(10);
+    ADCON0bits.CHS0 = 0; //configura canal 0 como entrada anal?gica
+    __delay_us(10);
+    ADCON0bits.CHS1 = 0; //configura canal 0 como entrada anal?gica
+    __delay_us(10);
+    ADCON0bits.CHS2 = 0; //configura canal 0 como entrada anal?gica
+    __delay_us(10);
+    ADCON0bits.GO = 1;  //converte
+    __delay_us(10);     //tempo de convers?o
+    peso = ADRESH;     // passa valores convertido do reg para a vari?vel
+    return peso;
+}
+int PesoEstoque(){
+     //Seleciona canal de entrada 0 como entrada anal?gica
+    int peso;
+    __delay_us(10);
+    ADCON0bits.CHS0 = 1; //configura canal 0 como entrada anal?gica
+    __delay_us(10);
+    ADCON0bits.CHS1 = 0; //configura canal 0 como entrada anal?gica
+    __delay_us(10);
+    ADCON0bits.CHS2 = 0; //configura canal 0 como entrada anal?gica
+    __delay_us(10);
+    ADCON0bits.GO = 1;  //converte
+    __delay_us(10);     //tempo de convers?o
+    peso = ADRESH;     // passa valores convertido do reg para a vari?vel
+    return peso;
+}
+
 void Lcd_Padrao(){
     Lcd_Clear();  //limpa LCD
     Lcd_Set_Cursor(1,1);
@@ -110,7 +141,7 @@ void main(void) {
     //Configs dos AD, desta maneira AN0 e AN1 serão Analogicos
     ADCON1bits.PCFG0 = 0;
     ADCON1bits.PCFG1 = 0;
-    ADCON1bits.PCFG2 = 1;
+    ADCON1bits.PCFG2 = 0;
     ADCON1bits.PCFG3 = 0;
 	
 	ADCON0bits.ADCS0 = 0;   
@@ -130,23 +161,8 @@ void main(void) {
     interrupcao = 0;
     aux_despejo = 0;
     while(1){
-        //Seleciona canal de entrada 0 como entrada anal?gica
-       ADCON0bits.CHS0 = 0; //configura canal 0 como entrada anal?gica
-       ADCON0bits.CHS1 = 0; //configura canal 0 como entrada anal?gica
-       ADCON0bits.CHS2 = 0; //configura canal 0 como entrada anal?gica
-       ADCON0bits.GO = 1;  //converte
-       __delay_us(10);     //tempo de convers?o
-       peso_cambuca = ADRESH;     // passa valores convertido do reg para a vari?vel
-       
-       __delay_ms(1000);
-       
-       ADCON0bits.CHS0 = 1; //configura canal 0 como entrada anal?gica
-       ADCON0bits.CHS1 = 0; //configura canal 0 como entrada anal?gica
-       ADCON0bits.CHS2 = 0; //configura canal 0 como entrada anal?gica
-       ADCON0bits.GO = 1;  //converte
-       __delay_us(10);     //tempo de convers?o
-       peso_estoque = ADRESH;     // passa valores convertido do reg para a vari?vel
-        
+       peso_cambuca = PesoCambuca();
+       peso_estoque = PesoEstoque();
         if(interrupcao == 1){
             interrupcao = 0;
             __delay_ms(2000);

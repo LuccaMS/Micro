@@ -34,8 +34,12 @@
 "47 C:\Users\Mathe\Documents\UFSC\Micro\racao.X\newmain.c
 [v _tes tes `II(v  1 e 1 0 ]
 "73
+[v _PesoCambuca PesoCambuca `(i  1 e 2 0 ]
+"88
+[v _PesoEstoque PesoEstoque `(i  1 e 2 0 ]
+"104
 [v _Lcd_Padrao Lcd_Padrao `(v  1 e 1 0 ]
-"81
+"112
 [v _main main `(v  1 e 1 0 ]
 "166 C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
@@ -122,14 +126,14 @@
 [v _T1CONbits T1CONbits `VES73  1 e 1 @16 ]
 "1152
 [v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
-[s S200 . 1 `uc 1 ADON 1 0 :1:0 
+[s S146 . 1 `uc 1 ADON 1 0 :1:0 
 `uc 1 . 1 0 :1:1 
 `uc 1 GO_nDONE 1 0 :1:2 
 `uc 1 CHS 1 0 :3:3 
 `uc 1 ADCS 1 0 :2:6 
 ]
 "1190
-[s S206 . 1 `uc 1 . 1 0 :2:0 
+[s S152 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 GO 1 0 :1:2 
 `uc 1 CHS0 1 0 :1:3 
 `uc 1 CHS1 1 0 :1:4 
@@ -137,14 +141,14 @@
 `uc 1 ADCS0 1 0 :1:6 
 `uc 1 ADCS1 1 0 :1:7 
 ]
-[s S214 . 1 `uc 1 . 1 0 :2:0 
+[s S160 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 nDONE 1 0 :1:2 
 ]
-[s S217 . 1 `uc 1 . 1 0 :2:0 
+[s S163 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 GO_DONE 1 0 :1:2 
 ]
-[u S220 . 1 `S200 1 . 1 0 `S206 1 . 1 0 `S214 1 . 1 0 `S217 1 . 1 0 ]
-[v _ADCON0bits ADCON0bits `VES220  1 e 1 @31 ]
+[u S166 . 1 `S146 1 . 1 0 `S152 1 . 1 0 `S160 1 . 1 0 `S163 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES166  1 e 1 @31 ]
 "1255
 [v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
 "1325
@@ -155,7 +159,7 @@
 [v _TRISC TRISC `VEuc  1 e 1 @135 ]
 "1499
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
-[s S155 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S202 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -165,23 +169,23 @@
 `uc 1 PSPIE 1 0 :1:7 
 ]
 "1635
-[u S164 . 1 `S155 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES164  1 e 1 @140 ]
+[u S211 . 1 `S202 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES211  1 e 1 @140 ]
 "2222
 [v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
-[s S176 . 1 `uc 1 PCFG 1 0 :4:0 
+[s S223 . 1 `uc 1 PCFG 1 0 :4:0 
 `uc 1 . 1 0 :2:4 
 `uc 1 ADCS2 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "2248
-[s S181 . 1 `uc 1 PCFG0 1 0 :1:0 
+[s S228 . 1 `uc 1 PCFG0 1 0 :1:0 
 `uc 1 PCFG1 1 0 :1:1 
 `uc 1 PCFG2 1 0 :1:2 
 `uc 1 PCFG3 1 0 :1:3 
 ]
-[u S186 . 1 `S176 1 . 1 0 `S181 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES186  1 e 1 @159 ]
+[u S233 . 1 `S223 1 . 1 0 `S228 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES233  1 e 1 @159 ]
 "2704
 [v _RC0 RC0 `VEb  1 e 0 @56 ]
 "2710
@@ -206,15 +210,29 @@
 [v _interrupcao interrupcao `i  1 e 2 0 ]
 "45
 [v _conta conta `i  1 e 2 0 ]
-"81
+"112
 [v _main main `(v  1 e 1 0 ]
 {
-"176
+"192
+} 0
+"88
+[v _PesoEstoque PesoEstoque `(i  1 e 2 0 ]
+{
+"90
+[v PesoEstoque@peso peso `i  1 a 2 4 ]
+"102
 } 0
 "73
+[v _PesoCambuca PesoCambuca `(i  1 e 2 0 ]
+{
+"75
+[v PesoCambuca@peso peso `i  1 a 2 4 ]
+"87
+} 0
+"104
 [v _Lcd_Padrao Lcd_Padrao `(v  1 e 1 0 ]
 {
-"79
+"110
 } 0
 "96 C:\Users\Mathe\Documents\UFSC\Micro\racao.X/LCD.h
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]

@@ -1982,6 +1982,37 @@ void __attribute__((picinterrupt(("")))) tes(void){
     return;
 }
 
+int PesoCambuca(){
+
+    int peso;
+    _delay((unsigned long)((10)*(4000000/4000000.0)));
+    ADCON0bits.CHS0 = 0;
+    _delay((unsigned long)((10)*(4000000/4000000.0)));
+    ADCON0bits.CHS1 = 0;
+    _delay((unsigned long)((10)*(4000000/4000000.0)));
+    ADCON0bits.CHS2 = 0;
+    _delay((unsigned long)((10)*(4000000/4000000.0)));
+    ADCON0bits.GO = 1;
+    _delay((unsigned long)((10)*(4000000/4000000.0)));
+    peso = ADRESH;
+    return peso;
+}
+int PesoEstoque(){
+
+    int peso;
+    _delay((unsigned long)((10)*(4000000/4000000.0)));
+    ADCON0bits.CHS0 = 1;
+    _delay((unsigned long)((10)*(4000000/4000000.0)));
+    ADCON0bits.CHS1 = 0;
+    _delay((unsigned long)((10)*(4000000/4000000.0)));
+    ADCON0bits.CHS2 = 0;
+    _delay((unsigned long)((10)*(4000000/4000000.0)));
+    ADCON0bits.GO = 1;
+    _delay((unsigned long)((10)*(4000000/4000000.0)));
+    peso = ADRESH;
+    return peso;
+}
+
 void Lcd_Padrao(){
     Lcd_Clear();
     Lcd_Set_Cursor(1,1);
@@ -2022,7 +2053,7 @@ void main(void) {
 
     ADCON1bits.PCFG0 = 0;
     ADCON1bits.PCFG1 = 0;
-    ADCON1bits.PCFG2 = 1;
+    ADCON1bits.PCFG2 = 0;
     ADCON1bits.PCFG3 = 0;
 
  ADCON0bits.ADCS0 = 0;
@@ -2042,23 +2073,8 @@ void main(void) {
     interrupcao = 0;
     aux_despejo = 0;
     while(1){
-
-       ADCON0bits.CHS0 = 0;
-       ADCON0bits.CHS1 = 0;
-       ADCON0bits.CHS2 = 0;
-       ADCON0bits.GO = 1;
-       _delay((unsigned long)((10)*(4000000/4000000.0)));
-       peso_cambuca = ADRESH;
-
-       _delay((unsigned long)((1000)*(4000000/4000.0)));
-
-       ADCON0bits.CHS0 = 1;
-       ADCON0bits.CHS1 = 0;
-       ADCON0bits.CHS2 = 0;
-       ADCON0bits.GO = 1;
-       _delay((unsigned long)((10)*(4000000/4000000.0)));
-       peso_estoque = ADRESH;
-
+       peso_cambuca = PesoCambuca();
+       peso_estoque = PesoEstoque();
         if(interrupcao == 1){
             interrupcao = 0;
             _delay((unsigned long)((2000)*(4000000/4000.0)));
