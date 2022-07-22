@@ -10,7 +10,7 @@
 #include <stdio.h>
 
 
-#pragma config WDTE = OFF
+#pragma config WDTE = ON
 #pragma config FOSC = HS
 #pragma config PWRTE = ON
 #pragma config BOREN = ON
@@ -50,6 +50,7 @@ void __interrupt() tes(void){
         PIR1bits.TMR1IF = 0; //reseta o flag da interrupcao
         TMR1L = 0xDC;
         TMR1H = 0X0B;
+        CLRWDT(); //limpando o watchdog
         conta++;
         if(conta == 8){
             T1CONbits.TMR1ON = 0;
@@ -62,6 +63,7 @@ void __interrupt() tes(void){
     {
         INTCONbits.INTF = 0;
         motor = 0;
+        CLRWDT();
         Lcd_Clear();  //limpa LCD
         Lcd_Set_Cursor(1,1);
         Lcd_Write_String("FUNCIONAMENTO");
@@ -126,12 +128,11 @@ void main(void) {
     INTCONbits.PEIE = 1;
     INTCONbits.INTE=1; //RB0 como interrupt
     
-    // ---------TIMER--------- //
-    //configs do timer
     PIE1bits.TMR1IE = 1; //ativa o timer
     T1CONbits.TMR1CS = 0;   //Define timer 1 como temporizador (Fosc/4)
-    T1CONbits.T1CKPS0 = 1;  //bit pra configurar pre-escaler, neste caso 1:8
-    T1CONbits.T1CKPS1 = 1;  //bit pra configurar pre-escaler, neste caso 1:8
+   
+    T1CONbits.T1CKPS0 = 1;  //Pre-escaler para 1:8
+    T1CONbits.T1CKPS1 = 1;  //Pre-escaler para 1:8
     
     //4 mhz externo / 4 logo temos 1 mhz
     //1 mhz divido por 8 da config to T1CKPS0 + T1CKPS
@@ -157,21 +158,35 @@ void main(void) {
     
     ADCON0bits.ADON = 1; //liga nosso AD
     
+    
+    //abaixo estamos setando as configs do Watchdog time, apesar de acima já termos configurado, só para ter certeza
+    OPTION_REGbits.PSA = 1; 
+    
+    OPTION_REGbits.PS0 = 1;
+    OPTION_REGbits.PS1 = 1;
+    OPTION_REGbits.PS2 = 1;
+    // 72 ms para o watchdog time
+    
+    CLRWDT();
     Lcd_Init();
     Lcd_Padrao();
     resistencia = 1;
     interrupcao = 0;
     aux_timer = 0;
     while(1){
+        CLRWDT();
         while(interrupcao == 1){
+            // não iremos usar o watchdog aqui, porque se ele apertar na interrupção e demorar muito até apertar o reinicio novamente
+            //iremos resetar o microcontrolador
             if(btn_reinicio == 0){
                 interrupcao = 0;
                 Lcd_Padrao();
             }
         }
         if(btn_despejo == 0){
+            CLRWDT();
             aux_timer = 0;
-            Lcd_Clear();  //limpa LCD
+            Lcd_Clear();  
             Lcd_Set_Cursor(1,1);
             Lcd_Write_String("DESPEJANDO...");
             T1CONbits.TMR1ON = 1;
@@ -180,7 +195,7 @@ void main(void) {
             };
             motor = 0;
             if(interrupcao == 0){
-                Lcd_Clear();  //limpa LCD
+                Lcd_Clear(); 
                 Lcd_Set_Cursor(1,1);
                 Lcd_Write_String("RACAO COLOCADA.");
                 __delay_ms(2000);
@@ -188,10 +203,13 @@ void main(void) {
             }     
         }
         if(PesoCambuca()<= 51 && PesoEstoque() > 51 && interrupcao == 0){
-            Lcd_Clear();  //limpa LCD
+            CLRWDT();
+            Lcd_Clear();  
             Lcd_Set_Cursor(1,1);
             Lcd_Write_String("DESPEJANDO...");
             while(PesoCambuca() <= 204 && PesoEstoque() > 51){ //80% e 20%
+                //se ele estiver preso aqui por muito tempo o watchdog vai resetarm devido ao algum eventual bug de sensores.
+                CLRWDT();
                 if(interrupcao == 1){
                     break;
                 }
@@ -199,7 +217,7 @@ void main(void) {
             }
             if(interrupcao == 0){
                 motor = 0;
-                Lcd_Clear();  //limpa LCD
+                Lcd_Clear(); 
                 Lcd_Set_Cursor(1,1);
                 Lcd_Write_String("RACAO COLOCADA.");
                 __delay_ms(2000);
@@ -208,9 +226,10 @@ void main(void) {
         }
        if(PesoEstoque() <= 51)
        {
+           CLRWDT();
            aux_timer = 0;
            buzzer = 1;
-           Lcd_Clear();  //limpa LCD
+           Lcd_Clear();  
            Lcd_Set_Cursor(1,1);
            Lcd_Write_String("ESTOQUE EM NIVEL");
            Lcd_Set_Cursor(2,1);

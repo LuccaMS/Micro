@@ -22,8 +22,8 @@ extern double __fpnormalize(double);
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\xc8debug.h" 1 3
-# 13 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\xc8debug.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\xc8debug.h" 1 3
+# 13 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\xc8debug.h" 3
 #pragma intrinsic(__builtin_software_breakpoint)
 extern void __builtin_software_breakpoint(void);
 # 24 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
@@ -1726,7 +1726,7 @@ extern __bank0 __bit __timeout;
 # 8 "newmain.c" 2
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdio.h" 1 3
 
 
 
@@ -1735,17 +1735,17 @@ extern __bank0 __bit __timeout;
 
 
 typedef unsigned size_t;
-# 4 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
+# 4 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdio.h" 2 3
 
 # 1 "C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\__null.h" 1 3
-# 5 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
+# 5 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdio.h" 2 3
 
 
 
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdarg.h" 1 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdarg.h" 1 3
 
 
 
@@ -1759,15 +1759,15 @@ extern void * __va_start(void);
 
 #pragma intrinsic(__va_arg)
 extern void * __va_arg(void *, ...);
-# 11 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
-# 43 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 3
+# 11 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdio.h" 2 3
+# 43 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdio.h" 3
 struct __prbuf
 {
  char * ptr;
  void (* func)(char);
 };
-# 85 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 3
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\conio.h" 1 3
+# 85 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdio.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\conio.h" 1 3
 
 
 
@@ -1775,10 +1775,10 @@ struct __prbuf
 
 
 
-# 1 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\errno.h" 1 3
-# 29 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\errno.h" 3
+# 1 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\errno.h" 1 3
+# 29 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\errno.h" 3
 extern int errno;
-# 8 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\conio.h" 2 3
+# 8 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\conio.h" 2 3
 
 
 
@@ -1796,7 +1796,7 @@ extern __bit kbhit(void);
 
 extern char * cgets(char *);
 extern void cputs(const char *);
-# 85 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 2 3
+# 85 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdio.h" 2 3
 
 
 
@@ -1806,7 +1806,7 @@ extern int cprintf(char *, ...);
 
 
 extern int _doprnt(struct __prbuf *, const register char *, register va_list);
-# 180 "C:\\Program Files\\Microchip\\xc8\\v2.40\\pic\\include\\c90\\stdio.h" 3
+# 180 "C:\\Program Files\\Microchip\\xc8\\v2.36\\pic\\include\\c90\\stdio.h" 3
 #pragma printf_check(vprintf) const
 #pragma printf_check(vsprintf) const
 
@@ -1827,7 +1827,7 @@ extern int printf(const char *, ...);
 
 
 
-#pragma config WDTE = OFF
+#pragma config WDTE = ON
 #pragma config FOSC = HS
 #pragma config PWRTE = ON
 #pragma config BOREN = ON
@@ -1961,6 +1961,7 @@ void __attribute__((picinterrupt(("")))) tes(void){
         PIR1bits.TMR1IF = 0;
         TMR1L = 0xDC;
         TMR1H = 0X0B;
+        __asm("clrwdt");
         conta++;
         if(conta == 8){
             T1CONbits.TMR1ON = 0;
@@ -1973,6 +1974,7 @@ void __attribute__((picinterrupt(("")))) tes(void){
     {
         INTCONbits.INTF = 0;
         PORTDbits.RD7 = 0;
+        __asm("clrwdt");
         Lcd_Clear();
         Lcd_Set_Cursor(1,1);
         Lcd_Write_String("FUNCIONAMENTO");
@@ -2037,10 +2039,9 @@ void main(void) {
     INTCONbits.PEIE = 1;
     INTCONbits.INTE=1;
 
-
-
     PIE1bits.TMR1IE = 1;
     T1CONbits.TMR1CS = 0;
+
     T1CONbits.T1CKPS0 = 1;
     T1CONbits.T1CKPS1 = 1;
 
@@ -2068,19 +2069,33 @@ void main(void) {
 
     ADCON0bits.ADON = 1;
 
+
+
+    OPTION_REGbits.PSA = 1;
+
+    OPTION_REGbits.PS0 = 1;
+    OPTION_REGbits.PS1 = 1;
+    OPTION_REGbits.PS2 = 1;
+
+
+    __asm("clrwdt");
     Lcd_Init();
     Lcd_Padrao();
     PORTDbits.RD5 = 1;
     interrupcao = 0;
     aux_timer = 0;
     while(1){
+        __asm("clrwdt");
         while(interrupcao == 1){
+
+
             if(PORTBbits.RB1 == 0){
                 interrupcao = 0;
                 Lcd_Padrao();
             }
         }
         if(PORTBbits.RB2 == 0){
+            __asm("clrwdt");
             aux_timer = 0;
             Lcd_Clear();
             Lcd_Set_Cursor(1,1);
@@ -2099,10 +2114,13 @@ void main(void) {
             }
         }
         if(PesoCambuca()<= 51 && PesoEstoque() > 51 && interrupcao == 0){
+            __asm("clrwdt");
             Lcd_Clear();
             Lcd_Set_Cursor(1,1);
             Lcd_Write_String("DESPEJANDO...");
             while(PesoCambuca() <= 204 && PesoEstoque() > 51){
+
+                __asm("clrwdt");
                 if(interrupcao == 1){
                     break;
                 }
@@ -2119,6 +2137,7 @@ void main(void) {
         }
        if(PesoEstoque() <= 51)
        {
+           __asm("clrwdt");
            aux_timer = 0;
            PORTDbits.RD6 = 1;
            Lcd_Clear();
