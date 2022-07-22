@@ -147,6 +147,7 @@ void main(void) {
             while(btn_despejo == 0){
                 if(interrupcao == 1){
                     interrupcao = 0;
+         return;
                 }
                 motor = 1;
             }

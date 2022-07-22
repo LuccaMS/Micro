@@ -1991,9 +1991,6 @@ void main(void) {
     INTCONbits.INTE=1;
 
 
-
-
-
     PIE1bits.TMR1IE = 1;
     T1CONbits.TMR1CS = 0 ;
     T1CONbits.T1CKPS0 = 1;
@@ -2001,7 +1998,7 @@ void main(void) {
 
     TMR1L = 0xDC;
     TMR1H = 0X0B;
-# 124 "newmain.c"
+# 121 "newmain.c"
     Lcd_Init();
     Lcd_Clear();
     Lcd_Set_Cursor(1,1);
@@ -2014,15 +2011,25 @@ void main(void) {
             interrupcao = 0;
         }
         PORTDbits.RD7 = 0;
+# 142 "newmain.c"
         if(PORTBbits.RB1 == 0){
             Lcd_Clear();
             Lcd_Set_Cursor(1,1);
             Lcd_Write_String("DESPEJANDO...");
             PORTDbits.RD7 = 1;
-            T1CONbits.TMR1ON = 1;
-            PORTDbits.RD7 = 0;
+            while(PORTBbits.RB1 == 0){
+                if(interrupcao == 1){
+                    interrupcao = 0;
+         return;
+                }
+                PORTDbits.RD7 = 1;
+            }
+            Lcd_Clear();
+            Lcd_Set_Cursor(1,1);
+            Lcd_Write_String("SIGMA DOG");
+            Lcd_Set_Cursor(2,1);
+            Lcd_Write_String("GRINDSET");
         }
-# 162 "newmain.c"
     }
 
     return ;
