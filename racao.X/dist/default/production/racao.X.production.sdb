@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F877A ]
 [d frameptr 0 ]
-"3 C:\Users\Saint\OneDrive\Documentos\Micro\racao.X/LCD.h
+"3 C:\Users\Mathe\Documents\UFSC\Micro\racao.X/LCD.h
 [v _Lcd_Port Lcd_Port `(v  1 e 1 0 ]
 [v i1_Lcd_Port Lcd_Port `(v  1 e 1 0 ]
 "25
@@ -23,23 +23,25 @@
 "96
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
 [v i1_Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
-"10 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\sprcadd.c
+"10 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
-"4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\Umul8_16.c
+"4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"6 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\pic\__eeprom.c
+"6 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\pic\__eeprom.c
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"45 C:\Users\Saint\OneDrive\Documentos\Micro\racao.X\newmain.c
+"47 C:\Users\Mathe\Documents\UFSC\Micro\racao.X\newmain.c
 [v _tes tes `II(v  1 e 1 0 ]
-"66
+"73
+[v _Lcd_Padrao Lcd_Padrao `(v  1 e 1 0 ]
+"81
 [v _main main `(v  1 e 1 0 ]
 "166 C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
 "216
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
-[s S176 . 1 `uc 1 RB0 1 0 :1:0 
+[s S248 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -49,13 +51,13 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "233
-[u S185 . 1 `S176 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES185  1 e 1 @6 ]
+[u S257 . 1 `S248 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES257  1 e 1 @6 ]
 "278
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
 "340
 [v _PORTD PORTD `VEuc  1 e 1 @8 ]
-[s S90 . 1 `uc 1 RD0 1 0 :1:0 
+[s S125 . 1 `uc 1 RD0 1 0 :1:0 
 `uc 1 RD1 1 0 :1:1 
 `uc 1 RD2 1 0 :1:2 
 `uc 1 RD3 1 0 :1:3 
@@ -65,9 +67,9 @@
 `uc 1 RD7 1 0 :1:7 
 ]
 "357
-[u S99 . 1 `S90 1 . 1 0 ]
-[v _PORTDbits PORTDbits `VES99  1 e 1 @8 ]
-[s S58 . 1 `uc 1 RBIF 1 0 :1:0 
+[u S134 . 1 `S125 1 . 1 0 ]
+[v _PORTDbits PORTDbits `VES134  1 e 1 @8 ]
+[s S93 . 1 `uc 1 RBIF 1 0 :1:0 
 `uc 1 INTF 1 0 :1:1 
 `uc 1 TMR0IF 1 0 :1:2 
 `uc 1 RBIE 1 0 :1:3 
@@ -77,13 +79,13 @@
 `uc 1 GIE 1 0 :1:7 
 ]
 "477
-[s S67 . 1 `uc 1 . 1 0 :2:0 
+[s S102 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T0IF 1 0 :1:2 
 `uc 1 . 1 0 :2:3 
 `uc 1 T0IE 1 0 :1:5 
 ]
-[u S72 . 1 `S58 1 . 1 0 `S67 1 . 1 0 ]
-[v _INTCONbits INTCONbits `VES72  1 e 1 @11 ]
+[u S107 . 1 `S93 1 . 1 0 `S102 1 . 1 0 ]
+[v _INTCONbits INTCONbits `VES107  1 e 1 @11 ]
 [s S35 . 1 `uc 1 TMR1IF 1 0 :1:0 
 `uc 1 TMR2IF 1 0 :1:1 
 `uc 1 CCP1IF 1 0 :1:2 
@@ -100,24 +102,49 @@
 [v _TMR1L TMR1L `VEuc  1 e 1 @14 ]
 "648
 [v _TMR1H TMR1H `VEuc  1 e 1 @15 ]
-[s S141 . 1 `uc 1 TMR1ON 1 0 :1:0 
+[s S58 . 1 `uc 1 TMR1ON 1 0 :1:0 
 `uc 1 TMR1CS 1 0 :1:1 
 `uc 1 nT1SYNC 1 0 :1:2 
 `uc 1 T1OSCEN 1 0 :1:3 
 `uc 1 T1CKPS 1 0 :2:4 
 ]
 "680
-[s S147 . 1 `uc 1 . 1 0 :2:0 
+[s S64 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T1SYNC 1 0 :1:2 
 `uc 1 . 1 0 :1:3 
 `uc 1 T1CKPS0 1 0 :1:4 
 `uc 1 T1CKPS1 1 0 :1:5 
 ]
-[s S153 . 1 `uc 1 . 1 0 :2:0 
+[s S70 . 1 `uc 1 . 1 0 :2:0 
 `uc 1 T1INSYNC 1 0 :1:2 
 ]
-[u S156 . 1 `S141 1 . 1 0 `S147 1 . 1 0 `S153 1 . 1 0 ]
-[v _T1CONbits T1CONbits `VES156  1 e 1 @16 ]
+[u S73 . 1 `S58 1 . 1 0 `S64 1 . 1 0 `S70 1 . 1 0 ]
+[v _T1CONbits T1CONbits `VES73  1 e 1 @16 ]
+"1152
+[v _ADRESH ADRESH `VEuc  1 e 1 @30 ]
+[s S200 . 1 `uc 1 ADON 1 0 :1:0 
+`uc 1 . 1 0 :1:1 
+`uc 1 GO_nDONE 1 0 :1:2 
+`uc 1 CHS 1 0 :3:3 
+`uc 1 ADCS 1 0 :2:6 
+]
+"1190
+[s S206 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 GO 1 0 :1:2 
+`uc 1 CHS0 1 0 :1:3 
+`uc 1 CHS1 1 0 :1:4 
+`uc 1 CHS2 1 0 :1:5 
+`uc 1 ADCS0 1 0 :1:6 
+`uc 1 ADCS1 1 0 :1:7 
+]
+[s S214 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 nDONE 1 0 :1:2 
+]
+[s S217 . 1 `uc 1 . 1 0 :2:0 
+`uc 1 GO_DONE 1 0 :1:2 
+]
+[u S220 . 1 `S200 1 . 1 0 `S206 1 . 1 0 `S214 1 . 1 0 `S217 1 . 1 0 ]
+[v _ADCON0bits ADCON0bits `VES220  1 e 1 @31 ]
 "1255
 [v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
 "1325
@@ -128,7 +155,7 @@
 [v _TRISC TRISC `VEuc  1 e 1 @135 ]
 "1499
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
-[s S120 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S155 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -138,8 +165,23 @@
 `uc 1 PSPIE 1 0 :1:7 
 ]
 "1635
-[u S129 . 1 `S120 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES129  1 e 1 @140 ]
+[u S164 . 1 `S155 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES164  1 e 1 @140 ]
+"2222
+[v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
+[s S176 . 1 `uc 1 PCFG 1 0 :4:0 
+`uc 1 . 1 0 :2:4 
+`uc 1 ADCS2 1 0 :1:6 
+`uc 1 ADFM 1 0 :1:7 
+]
+"2248
+[s S181 . 1 `uc 1 PCFG0 1 0 :1:0 
+`uc 1 PCFG1 1 0 :1:1 
+`uc 1 PCFG2 1 0 :1:2 
+`uc 1 PCFG3 1 0 :1:3 
+]
+[u S186 . 1 `S176 1 . 1 0 `S181 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES186  1 e 1 @159 ]
 "2704
 [v _RC0 RC0 `VEb  1 e 0 @56 ]
 "2710
@@ -154,25 +196,36 @@
 [v _RC7 RC7 `VEb  1 e 0 @63 ]
 "2890
 [v _TMR1IF TMR1IF `VEb  1 e 0 @96 ]
-"42 C:\Users\Saint\OneDrive\Documentos\Micro\racao.X\newmain.c
-[v _interrupcao interrupcao `i  1 e 2 0 ]
+"40 C:\Users\Mathe\Documents\UFSC\Micro\racao.X\newmain.c
+[v _peso_cambuca peso_cambuca `i  1 e 2 0 ]
+"41
+[v _peso_estoque peso_estoque `i  1 e 2 0 ]
 "43
-[v _test test `i  1 e 2 0 ]
-"66
+[v _aux_despejo aux_despejo `i  1 e 2 0 ]
+"44
+[v _interrupcao interrupcao `i  1 e 2 0 ]
+"45
+[v _conta conta `i  1 e 2 0 ]
+"81
 [v _main main `(v  1 e 1 0 ]
 {
-"165
+"176
 } 0
-"96 C:\Users\Saint\OneDrive\Documentos\Micro\racao.X/LCD.h
+"73
+[v _Lcd_Padrao Lcd_Padrao `(v  1 e 1 0 ]
+{
+"79
+} 0
+"96 C:\Users\Mathe\Documents\UFSC\Micro\racao.X/LCD.h
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
 {
 [v Lcd_Write_String@a a `*.24uc  1 a 1 wreg ]
 "98
-[v Lcd_Write_String@i i `i  1 a 2 9 ]
+[v Lcd_Write_String@i i `i  1 a 2 5 ]
 "96
 [v Lcd_Write_String@a a `*.24uc  1 a 1 wreg ]
 "99
-[v Lcd_Write_String@a a `*.24uc  1 a 1 11 ]
+[v Lcd_Write_String@a a `*.24uc  1 a 1 7 ]
 "101
 } 0
 "80
@@ -180,12 +233,12 @@
 {
 [v Lcd_Write_Char@a a `uc  1 a 1 wreg ]
 "82
-[v Lcd_Write_Char@y y `uc  1 a 1 7 ]
-[v Lcd_Write_Char@temp temp `uc  1 a 1 6 ]
+[v Lcd_Write_Char@y y `uc  1 a 1 3 ]
+[v Lcd_Write_Char@temp temp `uc  1 a 1 2 ]
 "80
 [v Lcd_Write_Char@a a `uc  1 a 1 wreg ]
 "83
-[v Lcd_Write_Char@a a `uc  1 a 1 8 ]
+[v Lcd_Write_Char@a a `uc  1 a 1 4 ]
 "94
 } 0
 "40
@@ -193,25 +246,25 @@
 {
 [v Lcd_Set_Cursor@a a `uc  1 a 1 wreg ]
 "42
-[v Lcd_Set_Cursor@temp temp `uc  1 a 1 14 ]
-[v Lcd_Set_Cursor@y y `uc  1 a 1 13 ]
-[v Lcd_Set_Cursor@z z `uc  1 a 1 12 ]
+[v Lcd_Set_Cursor@temp temp `uc  1 a 1 9 ]
+[v Lcd_Set_Cursor@y y `uc  1 a 1 8 ]
+[v Lcd_Set_Cursor@z z `uc  1 a 1 7 ]
 "40
 [v Lcd_Set_Cursor@a a `uc  1 a 1 wreg ]
-[v Lcd_Set_Cursor@b b `uc  1 p 1 8 ]
+[v Lcd_Set_Cursor@b b `uc  1 p 1 4 ]
 "43
-[v Lcd_Set_Cursor@a a `uc  1 a 1 11 ]
+[v Lcd_Set_Cursor@a a `uc  1 a 1 6 ]
 "59
-} 0
-"61
-[v _Lcd_Init Lcd_Init `(v  1 e 1 0 ]
-{
-"78
 } 0
 "34
 [v _Lcd_Clear Lcd_Clear `(v  1 e 1 0 ]
 {
 "38
+} 0
+"61
+[v _Lcd_Init Lcd_Init `(v  1 e 1 0 ]
+{
+"78
 } 0
 "25
 [v _Lcd_Cmd Lcd_Cmd `(v  1 e 1 0 ]
@@ -219,7 +272,7 @@
 [v Lcd_Cmd@a a `uc  1 a 1 wreg ]
 [v Lcd_Cmd@a a `uc  1 a 1 wreg ]
 "27
-[v Lcd_Cmd@a a `uc  1 a 1 7 ]
+[v Lcd_Cmd@a a `uc  1 a 1 3 ]
 "32
 } 0
 "3
@@ -228,15 +281,15 @@
 [v Lcd_Port@a a `uc  1 a 1 wreg ]
 [v Lcd_Port@a a `uc  1 a 1 wreg ]
 "5
-[v Lcd_Port@a a `uc  1 a 1 4 ]
+[v Lcd_Port@a a `uc  1 a 1 0 ]
 "24
 } 0
-"45 C:\Users\Saint\OneDrive\Documentos\Micro\racao.X\newmain.c
+"47 C:\Users\Mathe\Documents\UFSC\Micro\racao.X\newmain.c
 [v _tes tes `II(v  1 e 1 0 ]
 {
-"63
+"71
 } 0
-"96 C:\Users\Saint\OneDrive\Documentos\Micro\racao.X/LCD.h
+"96 C:\Users\Mathe\Documents\UFSC\Micro\racao.X/LCD.h
 [v i1_Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
 {
 [v i1Lcd_Write_String@a a `*.24uc  1 a 1 wreg ]
@@ -266,14 +319,14 @@
 {
 [v i1Lcd_Set_Cursor@a a `uc  1 a 1 wreg ]
 "42
-[v i1Lcd_Set_Cursor@temp temp `uc  1 a 1 10 ]
-[v i1Lcd_Set_Cursor@y y `uc  1 a 1 9 ]
-[v i1Lcd_Set_Cursor@z z `uc  1 a 1 8 ]
+[v i1Lcd_Set_Cursor@temp temp `uc  1 a 1 9 ]
+[v i1Lcd_Set_Cursor@y y `uc  1 a 1 8 ]
+[v i1Lcd_Set_Cursor@z z `uc  1 a 1 7 ]
 "40
 [v i1Lcd_Set_Cursor@a a `uc  1 a 1 wreg ]
 [v i1Lcd_Set_Cursor@b b `uc  1 p 1 4 ]
 "43
-[v i1Lcd_Set_Cursor@a a `uc  1 a 1 7 ]
+[v i1Lcd_Set_Cursor@a a `uc  1 a 1 6 ]
 "59
 } 0
 "34
