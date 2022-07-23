@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F877A ]
 [d frameptr 0 ]
-"3 C:\Users\Saint\OneDrive\Documentos\Micro\racao.X/LCD.h
+"3 C:\Users\Mathe\Documents\UFSC\Micro\racao.X/LCD.h
 [v _Lcd_Port Lcd_Port `(v  1 e 1 0 ]
 [v i1_Lcd_Port Lcd_Port `(v  1 e 1 0 ]
 "25
@@ -23,29 +23,47 @@
 "96
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
 [v i1_Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
-"10 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\sprcadd.c
+"5 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+"505 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\doprnt.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
+"43 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+"5 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+"10 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
-"4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\Umul8_16.c
+"8 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+"8 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"6 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\pic\__eeprom.c
+"10 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+"6 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\pic\__eeprom.c
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"48 C:\Users\Saint\OneDrive\Documentos\Micro\racao.X\newmain.c
+"50 C:\Users\Mathe\Documents\UFSC\Micro\racao.X\newmain.c
 [v _tes tes `II(v  1 e 1 0 ]
-"77
-[v _PesoEstoque PesoEstoque `(i  1 e 2 0 ]
-"92
-[v _PesoCambuca PesoCambuca `(i  1 e 2 0 ]
-"108
+"78
+[v _PesoEstoque PesoEstoque `(f  1 e 4 0 ]
+"93
+[v _PesoCambuca PesoCambuca `(f  1 e 4 0 ]
+"109
 [v _Lcd_Padrao Lcd_Padrao `(v  1 e 1 0 ]
-"116
+"151
 [v _main main `(v  1 e 1 0 ]
 "166 C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
 "216
 [v _PORTB PORTB `VEuc  1 e 1 @6 ]
-[s S274 . 1 `uc 1 RB0 1 0 :1:0 
+[s S280 . 1 `uc 1 RB0 1 0 :1:0 
 `uc 1 RB1 1 0 :1:1 
 `uc 1 RB2 1 0 :1:2 
 `uc 1 RB3 1 0 :1:3 
@@ -55,8 +73,8 @@
 `uc 1 RB7 1 0 :1:7 
 ]
 "233
-[u S283 . 1 `S274 1 . 1 0 ]
-[v _PORTBbits PORTBbits `VES283  1 e 1 @6 ]
+[u S289 . 1 `S280 1 . 1 0 ]
+[v _PORTBbits PORTBbits `VES289  1 e 1 @6 ]
 "278
 [v _PORTC PORTC `VEuc  1 e 1 @7 ]
 "340
@@ -151,7 +169,7 @@
 [v _ADCON0bits ADCON0bits `VES166  1 e 1 @31 ]
 "1255
 [v _OPTION_REG OPTION_REG `VEuc  1 e 1 @129 ]
-[s S248 . 1 `uc 1 PS 1 0 :3:0 
+[s S254 . 1 `uc 1 PS 1 0 :3:0 
 `uc 1 PSA 1 0 :1:3 
 `uc 1 T0SE 1 0 :1:4 
 `uc 1 T0CS 1 0 :1:5 
@@ -159,12 +177,12 @@
 `uc 1 nRBPU 1 0 :1:7 
 ]
 "1275
-[s S255 . 1 `uc 1 PS0 1 0 :1:0 
+[s S261 . 1 `uc 1 PS0 1 0 :1:0 
 `uc 1 PS1 1 0 :1:1 
 `uc 1 PS2 1 0 :1:2 
 ]
-[u S259 . 1 `S248 1 . 1 0 `S255 1 . 1 0 ]
-[v _OPTION_REGbits OPTION_REGbits `VES259  1 e 1 @129 ]
+[u S265 . 1 `S254 1 . 1 0 `S261 1 . 1 0 ]
+[v _OPTION_REGbits OPTION_REGbits `VES265  1 e 1 @129 ]
 "1325
 [v _TRISA TRISA `VEuc  1 e 1 @133 ]
 "1375
@@ -173,7 +191,7 @@
 [v _TRISC TRISC `VEuc  1 e 1 @135 ]
 "1499
 [v _TRISD TRISD `VEuc  1 e 1 @136 ]
-[s S202 . 1 `uc 1 TMR1IE 1 0 :1:0 
+[s S208 . 1 `uc 1 TMR1IE 1 0 :1:0 
 `uc 1 TMR2IE 1 0 :1:1 
 `uc 1 CCP1IE 1 0 :1:2 
 `uc 1 SSPIE 1 0 :1:3 
@@ -183,23 +201,23 @@
 `uc 1 PSPIE 1 0 :1:7 
 ]
 "1635
-[u S211 . 1 `S202 1 . 1 0 ]
-[v _PIE1bits PIE1bits `VES211  1 e 1 @140 ]
+[u S217 . 1 `S208 1 . 1 0 ]
+[v _PIE1bits PIE1bits `VES217  1 e 1 @140 ]
 "2222
 [v _ADRESL ADRESL `VEuc  1 e 1 @158 ]
-[s S223 . 1 `uc 1 PCFG 1 0 :4:0 
+[s S229 . 1 `uc 1 PCFG 1 0 :4:0 
 `uc 1 . 1 0 :2:4 
 `uc 1 ADCS2 1 0 :1:6 
 `uc 1 ADFM 1 0 :1:7 
 ]
 "2248
-[s S228 . 1 `uc 1 PCFG0 1 0 :1:0 
+[s S234 . 1 `uc 1 PCFG0 1 0 :1:0 
 `uc 1 PCFG1 1 0 :1:1 
 `uc 1 PCFG2 1 0 :1:2 
 `uc 1 PCFG3 1 0 :1:3 
 ]
-[u S233 . 1 `S223 1 . 1 0 `S228 1 . 1 0 ]
-[v _ADCON1bits ADCON1bits `VES233  1 e 1 @159 ]
+[u S239 . 1 `S229 1 . 1 0 `S234 1 . 1 0 ]
+[v _ADCON1bits ADCON1bits `VES239  1 e 1 @159 ]
 "2704
 [v _RC0 RC0 `VEb  1 e 0 @56 ]
 "2710
@@ -214,46 +232,206 @@
 [v _RC7 RC7 `VEb  1 e 0 @63 ]
 "2890
 [v _TMR1IF TMR1IF `VEb  1 e 0 @96 ]
-"44 C:\Users\Saint\OneDrive\Documentos\Micro\racao.X\newmain.c
+"358 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\doprnt.c
+[v _dpowers dpowers `DC[5]ui  1 s 10 dpowers ]
+"41 C:\Users\Mathe\Documents\UFSC\Micro\racao.X\newmain.c
+[v _aux_lcd aux_lcd `i  1 e 2 0 ]
+"43
 [v _aux_timer aux_timer `i  1 e 2 0 ]
-"45
+"44
 [v _interrupcao interrupcao `i  1 e 2 0 ]
-"46
+"45
 [v _conta conta `i  1 e 2 0 ]
-"116
+"46
+[v _aux_cambuca aux_cambuca `i  1 e 2 0 ]
+"47
+[v _aux_estoque aux_estoque `i  1 e 2 0 ]
+"48
+[v _aux_aviso aux_aviso `i  1 e 2 0 ]
+"151
 [v _main main `(v  1 e 1 0 ]
 {
-"254
+"292
 } 0
-"77
-[v _PesoEstoque PesoEstoque `(i  1 e 2 0 ]
+"4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\flge.c
+[v ___flge __flge `(b  1 e 0 0 ]
 {
-"79
-[v PesoEstoque@peso peso `i  1 a 2 8 ]
-"91
+[v ___flge@ff1 ff1 `d  1 p 4 30 ]
+[v ___flge@ff2 ff2 `d  1 p 4 34 ]
+"19
 } 0
-"92
-[v _PesoCambuca PesoCambuca `(i  1 e 2 0 ]
-{
-"94
-[v PesoCambuca@peso peso `i  1 a 2 8 ]
-"106
-} 0
-"108
+"109 C:\Users\Mathe\Documents\UFSC\Micro\racao.X\newmain.c
 [v _Lcd_Padrao Lcd_Padrao `(v  1 e 1 0 ]
 {
-"114
+"110
+[v Lcd_Padrao@buffer buffer `[20]uc  1 a 20 32 ]
+"112
+[v Lcd_Padrao@nivel_estoque nivel_estoque `i  1 a 2 54 ]
+"111
+[v Lcd_Padrao@nivel_cambuca nivel_cambuca `i  1 a 2 52 ]
+"149
 } 0
-"96 C:\Users\Saint\OneDrive\Documentos\Micro\racao.X/LCD.h
+"505 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\doprnt.c
+[v _sprintf sprintf `(i  1 e 2 0 ]
+{
+[v sprintf@sp sp `*.4uc  1 a 1 wreg ]
+"545
+[v sprintf@val val `ui  1 a 2 27 ]
+"512
+[v sprintf@c c `uc  1 a 1 30 ]
+"521
+[v sprintf@prec prec `c  1 a 1 26 ]
+"525
+[v sprintf@flag flag `uc  1 a 1 25 ]
+"507
+[v sprintf@ap ap `[1]*.4v  1 a 1 24 ]
+"505
+[v sprintf@sp sp `*.4uc  1 a 1 wreg ]
+[v sprintf@f f `*.24DCuc  1 p 1 18 ]
+"550
+[v sprintf@sp sp `*.4uc  1 a 1 29 ]
+"1567
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lwmod.c
+[v ___lwmod __lwmod `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwmod@counter counter `uc  1 a 1 17 ]
+"5
+[v ___lwmod@divisor divisor `ui  1 p 2 12 ]
+[v ___lwmod@dividend dividend `ui  1 p 2 14 ]
+"25
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lwdiv.c
+[v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
+{
+"10
+[v ___lwdiv@quotient quotient `ui  1 a 2 9 ]
+"11
+[v ___lwdiv@counter counter `uc  1 a 1 11 ]
+"5
+[v ___lwdiv@divisor divisor `ui  1 p 2 4 ]
+[v ___lwdiv@dividend dividend `ui  1 p 2 6 ]
+"30
+} 0
+"43 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\fltol.c
+[v ___fltol __fltol `(l  1 e 4 0 ]
+{
+"45
+[v ___fltol@exp1 exp1 `uc  1 a 1 70 ]
+[v ___fltol@sign1 sign1 `uc  1 a 1 69 ]
+"43
+[v ___fltol@f1 f1 `d  1 p 4 13 ]
+"70
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\sprcmul.c
+[v ___flmul __flmul `(d  1 e 4 0 ]
+{
+[s S747 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
+"13
+[s S752 . 4 `i 1 wordA 2 0 `i 1 wordB 2 2 ]
+[u S755 . 4 `l 1 i 4 0 `d 1 f 4 0 `S747 1 fAsBytes 4 0 `S752 1 fAsWords 4 0 ]
+[v ___flmul@prod prod `S755  1 a 4 50 ]
+"12
+[v ___flmul@grs grs `ul  1 a 4 44 ]
+[s S824 . 2 `uc 1 a 1 0 `uc 1 b 1 1 ]
+"14
+[u S827 . 2 `i 1 i 2 0 `ui 1 n 2 0 `S824 1 nAsBytes 2 0 ]
+[v ___flmul@temp temp `S827  1 a 2 54 ]
+"10
+[v ___flmul@bexp bexp `uc  1 a 1 49 ]
+"11
+[v ___flmul@aexp aexp `uc  1 a 1 48 ]
+"9
+[v ___flmul@sign sign `uc  1 a 1 43 ]
+"8
+[v ___flmul@b b `d  1 p 4 30 ]
+[v ___flmul@a a `d  1 p 4 34 ]
+"205
+} 0
+"4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul8_16.c
+[v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
+{
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
+"6
+[v __Umul8_16@word_mpld word_mpld `ui  1 a 2 10 ]
+"5
+[v __Umul8_16@product product `ui  1 a 2 8 ]
+"4
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
+[v __Umul8_16@multiplicand multiplicand `uc  1 p 1 4 ]
+[v __Umul8_16@multiplier multiplier `uc  1 a 1 12 ]
+"60
+} 0
+"8 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\sprcdiv.c
+[v ___fldiv __fldiv `(d  1 e 4 0 ]
+{
+"21
+[v ___fldiv@grs grs `ul  1 a 4 7 ]
+"22
+[v ___fldiv@rem rem `ul  1 a 4 0 ]
+"20
+[v ___fldiv@new_exp new_exp `i  1 a 2 5 ]
+"19
+[v ___fldiv@aexp aexp `uc  1 a 1 12 ]
+"18
+[v ___fldiv@bexp bexp `uc  1 a 1 11 ]
+"16
+[v ___fldiv@sign sign `uc  1 a 1 4 ]
+"8
+[v ___fldiv@a a `d  1 p 4 56 ]
+[v ___fldiv@b b `d  1 p 4 60 ]
+"185
+} 0
+"5 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
+[v ___awdiv __awdiv `(i  1 e 2 0 ]
+{
+"10
+[v ___awdiv@quotient quotient `i  1 a 2 27 ]
+"11
+[v ___awdiv@sign sign `uc  1 a 1 26 ]
+[v ___awdiv@counter counter `uc  1 a 1 25 ]
+"5
+[v ___awdiv@divisor divisor `i  1 p 2 21 ]
+[v ___awdiv@dividend dividend `i  1 p 2 23 ]
+"41
+} 0
+"78 C:\Users\Mathe\Documents\UFSC\Micro\racao.X\newmain.c
+[v _PesoEstoque PesoEstoque `(f  1 e 4 0 ]
+{
+"80
+[v PesoEstoque@peso peso `f  1 a 4 26 ]
+"92
+} 0
+"93
+[v _PesoCambuca PesoCambuca `(f  1 e 4 0 ]
+{
+"95
+[v PesoCambuca@peso peso `f  1 a 4 26 ]
+"107
+} 0
+"10 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\xxtofl.c
+[v ___xxtofl __xxtofl `(d  1 e 4 0 ]
+{
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+"13
+[v ___xxtofl@arg arg `ul  1 a 4 14 ]
+"12
+[v ___xxtofl@exp exp `uc  1 a 1 13 ]
+"10
+[v ___xxtofl@sign sign `uc  1 a 1 wreg ]
+[v ___xxtofl@val val `l  1 p 4 4 ]
+"15
+[v ___xxtofl@sign sign `uc  1 a 1 12 ]
+"44
+} 0
+"96 C:\Users\Mathe\Documents\UFSC\Micro\racao.X/LCD.h
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
 {
-[v Lcd_Write_String@a a `*.24uc  1 a 1 wreg ]
 "98
-[v Lcd_Write_String@i i `i  1 a 2 9 ]
+[v Lcd_Write_String@i i `i  1 a 2 14 ]
 "96
-[v Lcd_Write_String@a a `*.24uc  1 a 1 wreg ]
-"99
-[v Lcd_Write_String@a a `*.24uc  1 a 1 11 ]
+[v Lcd_Write_String@a a `*.26uc  1 p 2 9 ]
 "101
 } 0
 "80
@@ -274,14 +452,14 @@
 {
 [v Lcd_Set_Cursor@a a `uc  1 a 1 wreg ]
 "42
-[v Lcd_Set_Cursor@temp temp `uc  1 a 1 14 ]
-[v Lcd_Set_Cursor@y y `uc  1 a 1 13 ]
-[v Lcd_Set_Cursor@z z `uc  1 a 1 12 ]
+[v Lcd_Set_Cursor@temp temp `uc  1 a 1 13 ]
+[v Lcd_Set_Cursor@y y `uc  1 a 1 12 ]
+[v Lcd_Set_Cursor@z z `uc  1 a 1 11 ]
 "40
 [v Lcd_Set_Cursor@a a `uc  1 a 1 wreg ]
 [v Lcd_Set_Cursor@b b `uc  1 p 1 8 ]
 "43
-[v Lcd_Set_Cursor@a a `uc  1 a 1 11 ]
+[v Lcd_Set_Cursor@a a `uc  1 a 1 10 ]
 "59
 } 0
 "34
@@ -312,21 +490,18 @@
 [v Lcd_Port@a a `uc  1 a 1 4 ]
 "24
 } 0
-"48 C:\Users\Saint\OneDrive\Documentos\Micro\racao.X\newmain.c
+"50 C:\Users\Mathe\Documents\UFSC\Micro\racao.X\newmain.c
 [v _tes tes `II(v  1 e 1 0 ]
 {
-"75
+"76
 } 0
-"96 C:\Users\Saint\OneDrive\Documentos\Micro\racao.X/LCD.h
+"96 C:\Users\Mathe\Documents\UFSC\Micro\racao.X/LCD.h
 [v i1_Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
 {
-[v i1Lcd_Write_String@a a `*.24uc  1 a 1 wreg ]
 "98
-[v i1Lcd_Write_String@i i `i  1 a 2 6 ]
+[v i1Lcd_Write_String@i i `i  1 a 2 10 ]
 "96
-[v i1Lcd_Write_String@a a `*.24uc  1 a 1 wreg ]
-"99
-[v i1Lcd_Write_String@a a `*.24uc  1 a 1 5 ]
+[v i1Lcd_Write_String@a a `*.26uc  1 p 2 5 ]
 "101
 } 0
 "80
@@ -347,14 +522,14 @@
 {
 [v i1Lcd_Set_Cursor@a a `uc  1 a 1 wreg ]
 "42
-[v i1Lcd_Set_Cursor@temp temp `uc  1 a 1 10 ]
-[v i1Lcd_Set_Cursor@y y `uc  1 a 1 9 ]
-[v i1Lcd_Set_Cursor@z z `uc  1 a 1 8 ]
+[v i1Lcd_Set_Cursor@temp temp `uc  1 a 1 9 ]
+[v i1Lcd_Set_Cursor@y y `uc  1 a 1 8 ]
+[v i1Lcd_Set_Cursor@z z `uc  1 a 1 7 ]
 "40
 [v i1Lcd_Set_Cursor@a a `uc  1 a 1 wreg ]
 [v i1Lcd_Set_Cursor@b b `uc  1 p 1 4 ]
 "43
-[v i1Lcd_Set_Cursor@a a `uc  1 a 1 7 ]
+[v i1Lcd_Set_Cursor@a a `uc  1 a 1 6 ]
 "59
 } 0
 "34

@@ -1,7 +1,7 @@
 <?xml version='1.0' encoding='UTF-8' standalone='yes'?>
 <WORKSPACE>
  <FRAME activewindow="0">
-  <PLACEMENT>2c00000002000000030000000083ffff0083ffffffffffffffffffff2e00000015000000580600000b040000</PLACEMENT>
+  <PLACEMENT>2c0000000200000003000000ffffffffffffffffffffffffffffffff2e00000015000000580600000b040000</PLACEMENT>
   <WINDOW type="default" module="ISIS"/>
  </FRAME>
  <MODULE name="VSMDEBUG">
@@ -32,7 +32,7 @@
      <ITEM name="nItems">0</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="380" x="128" flags="00000008" y="190" h="182" pid="3" iid="1">
+   <POPUP w="52" x="128" flags="00000008" y="190" h="13" pid="3" iid="1">
     <PROPERTIES/>
    </POPUP>
    <POPUP w="8" x="148" flags="0000000a" y="210" h="32" pid="4" iid="1">
@@ -65,7 +65,7 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="114" x="208" flags="00000008" y="270" h="127" pid="7" iid="1">
+   <POPUP w="14" x="208" flags="00000008" y="270" h="8" pid="7" iid="1">
     <PROPERTIES/>
    </POPUP>
    <POPUP w="8" x="228" flags="00000002" y="290" h="8" pid="8" iid="1">
@@ -78,9 +78,9 @@
      <ITEM name="TopLineAddress">00000000</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="690" x="118" flags="0000002a" y="114" h="703" pid="1" iid="1">
+   <POPUP w="690" x="347" flags="0000002a" y="90" h="703" pid="1" iid="1">
     <PROPERTIES>
-     <ITEM name="Breakpoint 0">"",006E,0000,45D4,6216,1
+     <ITEM name="Breakpoint 0">"",0757,0000,83FE,AC7E,1
 </ITEM>
      <ITEM name="Breakpoint 1">"",00C3,0000,3B52,6216,-1
 </ITEM>
@@ -97,7 +97,7 @@
      <ITEM name="nBreakpoints">0</ITEM>
     </PROPERTIES>
    </POPUP>
-   <POPUP w="417" x="1495" flags="0000000a" y="81" h="497" pid="2" iid="1">
+   <POPUP w="417" x="1130" flags="0000000a" y="220" h="513" pid="2" iid="1">
     <PROPERTIES>
      <ITEM name="Address Column Width">96</ITEM>
      <ITEM name="AutoResize">No</ITEM>

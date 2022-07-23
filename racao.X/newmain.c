@@ -38,12 +38,14 @@
 
 #include "LCD.h"
 
-int peso_cambuca = 0;
-int peso_estoque = 0;
+int aux_lcd;
 int valor;
-int aux_timer = 0;
+int aux_timer;
 int interrupcao;
 int conta = 0;
+int aux_cambuca;
+int aux_estoque;
+int aux_aviso;
 
 void __interrupt() tes(void){
     if(TMR1IF){
@@ -56,8 +58,7 @@ void __interrupt() tes(void){
             T1CONbits.TMR1ON = 0;
             conta = 0;
             aux_timer = 1;
-        }
-        
+        }        
     }
     else if (INTCONbits.INTF)
     {
@@ -74,9 +75,9 @@ void __interrupt() tes(void){
     return;
 }
 
-int PesoEstoque(){
+float PesoEstoque(){
      //Seleciona canal de entrada 0 como entrada anal?gica
-    int peso;
+    float peso;
     __delay_us(10);
     ADCON0bits.CHS0 = 0; //configura canal 0 como entrada anal?gica
     __delay_us(10);
@@ -89,9 +90,9 @@ int PesoEstoque(){
     peso = ADRESH;     // passa valores convertido do reg para a vari?vel
     return peso;
 }
-int PesoCambuca(){
+float PesoCambuca(){
      //Seleciona canal de entrada 0 como entrada anal?gica
-    int peso;
+    float peso;
     __delay_us(10);
     ADCON0bits.CHS0 = 1; //configura canal 0 como entrada anal?gica
     __delay_us(10);
@@ -106,11 +107,45 @@ int PesoCambuca(){
 }
 
 void Lcd_Padrao(){
+    char buffer[20]; 
+    int nivel_cambuca = (int)(PesoCambuca()*100)/255;
+    int nivel_estoque = (int)(PesoEstoque()*100)/255;
+    if(aux_lcd == 0 || aux_aviso == 1){
+        sprintf(buffer, "Estoque = %d%%", nivel_estoque);
+        Lcd_Clear();  //limpa LCD
+        Lcd_Set_Cursor(1,1);
+        Lcd_Write_String(buffer);
+        sprintf(buffer, "Cambuca = %d%%", nivel_cambuca);
+        Lcd_Set_Cursor(2,1);
+        Lcd_Write_String(buffer);
+        aux_lcd = 1;
+        aux_cambuca = (PesoCambuca()*100)/255;
+        aux_estoque = (PesoEstoque()*100)/255;
+        if(aux_aviso == 1){
+            __delay_ms(2000);
+        }
+        aux_aviso = 0;
+        CLRWDT();
+    }
+    if(aux_cambuca != nivel_cambuca || aux_estoque != nivel_estoque){
+        aux_cambuca = nivel_cambuca;
+        aux_estoque = nivel_estoque;
+        sprintf(buffer, "Estoque = %d%%", nivel_estoque);
+        Lcd_Clear();  //limpa LCD
+        Lcd_Set_Cursor(1,1);
+        Lcd_Write_String(buffer);
+        sprintf(buffer, "Cambuca = %d%%", nivel_cambuca);
+        Lcd_Set_Cursor(2,1);
+        Lcd_Write_String(buffer);
+    }
+    /*
     Lcd_Clear();  //limpa LCD
     Lcd_Set_Cursor(1,1);
     Lcd_Write_String("SIGMA DOG");
     Lcd_Set_Cursor(2,1);
     Lcd_Write_String("GRINDSET");
+    CLRWDT(); */
+    
 }
 
 void main(void) {
@@ -173,7 +208,10 @@ void main(void) {
     resistencia = 1;
     interrupcao = 0;
     aux_timer = 0;
+    aux_lcd = 0;
+    
     while(1){
+        Lcd_Padrao();
         CLRWDT();
         while(interrupcao == 1){
             // não iremos usar o watchdog aqui, porque se ele apertar na interrupção e demorar muito até apertar o reinicio novamente
@@ -181,7 +219,7 @@ void main(void) {
             if(btn_reinicio == 0){
                 interrupcao = 0;
                 Lcd_Padrao();
-            }
+            }  
         }
         if(btn_despejo == 0){
             CLRWDT();
@@ -207,8 +245,7 @@ void main(void) {
             Lcd_Clear();  
             Lcd_Set_Cursor(1,1);
             Lcd_Write_String("DESPEJANDO...");
-            while(PesoCambuca() <= 204 && PesoEstoque() > 51){ //80% e 20%
-                //se ele estiver preso aqui por muito tempo o watchdog vai resetarm devido ao algum eventual bug de sensores.
+            while(PesoCambuca() < 204 && PesoEstoque() > 51){ //80% e 20%
                 CLRWDT();
                 if(interrupcao == 1){
                     break;
@@ -227,6 +264,7 @@ void main(void) {
        if(PesoEstoque() <= 51)
        {
            CLRWDT();
+           aux_aviso = 0;
            aux_timer = 0;
            buzzer = 1;
            Lcd_Clear();  
@@ -236,6 +274,7 @@ void main(void) {
            Lcd_Write_String("BAIXO...");
            T1CONbits.TMR1ON = 1;
            while(aux_timer == 0 && btn_despejo == 1){
+               CLRWDT();
                if(interrupcao == 1){
                     break;
                }
@@ -245,8 +284,7 @@ void main(void) {
             };
            buzzer = 0;
            if(interrupcao == 0){
-                Lcd_Padrao();
-                __delay_ms(2000);
+               aux_aviso = 1;
            }
        }
     }

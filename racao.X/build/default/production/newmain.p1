@@ -114,8 +114,10 @@ Version 4.0 HI-TECH Software Intermediate Code
 "1152
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 1152: extern volatile unsigned char ADRESH __attribute__((address(0x01E)));
 [v _ADRESH `Vuc ~T0 @X0 0 e@30 ]
+"194 C:\Program Files\Microchip\xc8\v2.40\pic\include\c90\stdio.h
+[v _sprintf `(i ~T0 @X0 0 e1v`*uc`*Cuc ]
 [p mainexit ]
-"1325
+"1325 C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h
 [; ;C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h: 1325: extern volatile unsigned char TRISA __attribute__((address(0x085)));
 [v _TRISA `Vuc ~T0 @X0 0 e@133 ]
 "1375
@@ -762,657 +764,752 @@ Version 4.0 HI-TECH Software Intermediate Code
 [e :UE 119 ]
 }
 "41 newmain.c
-[; ;newmain.c: 41: int peso_cambuca = 0;
-[v _peso_cambuca `i ~T0 @X0 1 e ]
-[i _peso_cambuca
--> 0 `i
-]
+[; ;newmain.c: 41: int aux_lcd;
+[v _aux_lcd `i ~T0 @X0 1 e ]
 "42
-[; ;newmain.c: 42: int peso_estoque = 0;
-[v _peso_estoque `i ~T0 @X0 1 e ]
-[i _peso_estoque
--> 0 `i
-]
-"43
-[; ;newmain.c: 43: int valor;
+[; ;newmain.c: 42: int valor;
 [v _valor `i ~T0 @X0 1 e ]
-"44
-[; ;newmain.c: 44: int aux_timer = 0;
+"43
+[; ;newmain.c: 43: int aux_timer;
 [v _aux_timer `i ~T0 @X0 1 e ]
-[i _aux_timer
--> 0 `i
-]
-"45
-[; ;newmain.c: 45: int interrupcao;
+"44
+[; ;newmain.c: 44: int interrupcao;
 [v _interrupcao `i ~T0 @X0 1 e ]
-"46
-[; ;newmain.c: 46: int conta = 0;
+"45
+[; ;newmain.c: 45: int conta = 0;
 [v _conta `i ~T0 @X0 1 e ]
 [i _conta
 -> 0 `i
 ]
-[v $root$_tes `(v ~T0 @X0 0 e ]
+"46
+[; ;newmain.c: 46: int aux_cambuca;
+[v _aux_cambuca `i ~T0 @X0 1 e ]
+"47
+[; ;newmain.c: 47: int aux_estoque;
+[v _aux_estoque `i ~T0 @X0 1 e ]
 "48
-[; ;newmain.c: 48: void __attribute__((picinterrupt(("")))) tes(void){
+[; ;newmain.c: 48: int aux_aviso;
+[v _aux_aviso `i ~T0 @X0 1 e ]
+[v $root$_tes `(v ~T0 @X0 0 e ]
+"50
+[; ;newmain.c: 50: void __attribute__((picinterrupt(("")))) tes(void){
 [v _tes `(v ~T1 @X0 1 ef ]
 {
 [e :U _tes ]
 [f ]
-"49
-[; ;newmain.c: 49:     if(TMR1IF){
+"51
+[; ;newmain.c: 51:     if(TMR1IF){
 [e $ ! _TMR1IF 121  ]
 {
-"50
-[; ;newmain.c: 50:         PIR1bits.TMR1IF = 0;
-[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
-"51
-[; ;newmain.c: 51:         TMR1L = 0xDC;
-[e = _TMR1L -> -> 220 `i `uc ]
 "52
-[; ;newmain.c: 52:         TMR1H = 0X0B;
-[e = _TMR1H -> -> 11 `i `uc ]
+[; ;newmain.c: 52:         PIR1bits.TMR1IF = 0;
+[e = . . _PIR1bits 0 0 -> -> 0 `i `uc ]
 "53
-[; ;newmain.c: 53:         __asm("clrwdt");
-[; <" clrwdt ;# ">
+[; ;newmain.c: 53:         TMR1L = 0xDC;
+[e = _TMR1L -> -> 220 `i `uc ]
 "54
-[; ;newmain.c: 54:         conta++;
-[e ++ _conta -> 1 `i ]
+[; ;newmain.c: 54:         TMR1H = 0X0B;
+[e = _TMR1H -> -> 11 `i `uc ]
 "55
-[; ;newmain.c: 55:         if(conta == 8){
+[; ;newmain.c: 55:         __asm("clrwdt");
+[; <" clrwdt ;# ">
+"56
+[; ;newmain.c: 56:         conta++;
+[e ++ _conta -> 1 `i ]
+"57
+[; ;newmain.c: 57:         if(conta == 8){
 [e $ ! == _conta -> 8 `i 122  ]
 {
-"56
-[; ;newmain.c: 56:             T1CONbits.TMR1ON = 0;
-[e = . . _T1CONbits 0 0 -> -> 0 `i `uc ]
-"57
-[; ;newmain.c: 57:             conta = 0;
-[e = _conta -> 0 `i ]
 "58
-[; ;newmain.c: 58:             aux_timer = 1;
-[e = _aux_timer -> 1 `i ]
+[; ;newmain.c: 58:             T1CONbits.TMR1ON = 0;
+[e = . . _T1CONbits 0 0 -> -> 0 `i `uc ]
 "59
-[; ;newmain.c: 59:         }
+[; ;newmain.c: 59:             conta = 0;
+[e = _conta -> 0 `i ]
+"60
+[; ;newmain.c: 60:             aux_timer = 1;
+[e = _aux_timer -> 1 `i ]
+"61
+[; ;newmain.c: 61:         }
 }
 [e :U 122 ]
-"61
-[; ;newmain.c: 61:     }
+"62
+[; ;newmain.c: 62:     }
 }
 [e $U 123  ]
-"62
-[; ;newmain.c: 62:     else if (INTCONbits.INTF)
+"63
+[; ;newmain.c: 63:     else if (INTCONbits.INTF)
 [e :U 121 ]
 [e $ ! != -> . . _INTCONbits 0 1 `i -> 0 `i 124  ]
-"63
-[; ;newmain.c: 63:     {
-{
 "64
-[; ;newmain.c: 64:         INTCONbits.INTF = 0;
-[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
+[; ;newmain.c: 64:     {
+{
 "65
-[; ;newmain.c: 65:         PORTDbits.RD7 = 0;
-[e = . . _PORTDbits 0 7 -> -> 0 `i `uc ]
+[; ;newmain.c: 65:         INTCONbits.INTF = 0;
+[e = . . _INTCONbits 0 1 -> -> 0 `i `uc ]
 "66
-[; ;newmain.c: 66:         __asm("clrwdt");
-[; <" clrwdt ;# ">
+[; ;newmain.c: 66:         PORTDbits.RD7 = 0;
+[e = . . _PORTDbits 0 7 -> -> 0 `i `uc ]
 "67
-[; ;newmain.c: 67:         Lcd_Clear();
-[e ( _Lcd_Clear ..  ]
+[; ;newmain.c: 67:         __asm("clrwdt");
+[; <" clrwdt ;# ">
 "68
-[; ;newmain.c: 68:         Lcd_Set_Cursor(1,1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;newmain.c: 68:         Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
 "69
-[; ;newmain.c: 69:         Lcd_Write_String("FUNCIONAMENTO");
-[e ( _Lcd_Write_String (1 :s 1C ]
+[; ;newmain.c: 69:         Lcd_Set_Cursor(1,1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
 "70
-[; ;newmain.c: 70:         Lcd_Set_Cursor(2,1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+[; ;newmain.c: 70:         Lcd_Write_String("FUNCIONAMENTO");
+[e ( _Lcd_Write_String (1 :s 1C ]
 "71
-[; ;newmain.c: 71:         Lcd_Write_String("INTERROMPIDO");
-[e ( _Lcd_Write_String (1 :s 2C ]
+[; ;newmain.c: 71:         Lcd_Set_Cursor(2,1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
 "72
-[; ;newmain.c: 72:         interrupcao = 1;
-[e = _interrupcao -> 1 `i ]
+[; ;newmain.c: 72:         Lcd_Write_String("INTERROMPIDO");
+[e ( _Lcd_Write_String (1 :s 2C ]
 "73
-[; ;newmain.c: 73:     }
+[; ;newmain.c: 73:         interrupcao = 1;
+[e = _interrupcao -> 1 `i ]
+"74
+[; ;newmain.c: 74:     }
 }
 [e :U 124 ]
 [e :U 123 ]
-"74
-[; ;newmain.c: 74:     return;
-[e $UE 120  ]
 "75
-[; ;newmain.c: 75: }
+[; ;newmain.c: 75:     return;
+[e $UE 120  ]
+"76
+[; ;newmain.c: 76: }
 [e :UE 120 ]
 }
-"77
-[; ;newmain.c: 77: int PesoEstoque(){
-[v _PesoEstoque `(i ~T0 @X0 1 ef ]
+"78
+[; ;newmain.c: 78: float PesoEstoque(){
+[v _PesoEstoque `(f ~T0 @X0 1 ef ]
 {
 [e :U _PesoEstoque ]
 [f ]
-"79
-[; ;newmain.c: 79:     int peso;
-[v _peso `i ~T0 @X0 1 a ]
 "80
-[; ;newmain.c: 80:     _delay((unsigned long)((10)*(4000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+[; ;newmain.c: 80:     float peso;
+[v _peso `f ~T0 @X0 1 a ]
 "81
-[; ;newmain.c: 81:     ADCON0bits.CHS0 = 0;
-[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
+[; ;newmain.c: 81:     _delay((unsigned long)((10)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
 "82
-[; ;newmain.c: 82:     _delay((unsigned long)((10)*(4000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+[; ;newmain.c: 82:     ADCON0bits.CHS0 = 0;
+[e = . . _ADCON0bits 1 2 -> -> 0 `i `uc ]
 "83
-[; ;newmain.c: 83:     ADCON0bits.CHS1 = 0;
-[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
+[; ;newmain.c: 83:     _delay((unsigned long)((10)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
 "84
-[; ;newmain.c: 84:     _delay((unsigned long)((10)*(4000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+[; ;newmain.c: 84:     ADCON0bits.CHS1 = 0;
+[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
 "85
-[; ;newmain.c: 85:     ADCON0bits.CHS2 = 0;
-[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
+[; ;newmain.c: 85:     _delay((unsigned long)((10)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
 "86
-[; ;newmain.c: 86:     _delay((unsigned long)((10)*(4000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+[; ;newmain.c: 86:     ADCON0bits.CHS2 = 0;
+[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
 "87
-[; ;newmain.c: 87:     ADCON0bits.GO = 1;
-[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
-"88
-[; ;newmain.c: 88:     _delay((unsigned long)((10)*(4000000/4000000.0)));
+[; ;newmain.c: 87:     _delay((unsigned long)((10)*(4000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"88
+[; ;newmain.c: 88:     ADCON0bits.GO = 1;
+[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
 "89
-[; ;newmain.c: 89:     peso = ADRESH;
-[e = _peso -> _ADRESH `i ]
+[; ;newmain.c: 89:     _delay((unsigned long)((10)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
 "90
-[; ;newmain.c: 90:     return peso;
+[; ;newmain.c: 90:     peso = ADRESH;
+[e = _peso -> _ADRESH `f ]
+"91
+[; ;newmain.c: 91:     return peso;
 [e ) _peso ]
 [e $UE 125  ]
-"91
-[; ;newmain.c: 91: }
+"92
+[; ;newmain.c: 92: }
 [e :UE 125 ]
 }
-"92
-[; ;newmain.c: 92: int PesoCambuca(){
-[v _PesoCambuca `(i ~T0 @X0 1 ef ]
+"93
+[; ;newmain.c: 93: float PesoCambuca(){
+[v _PesoCambuca `(f ~T0 @X0 1 ef ]
 {
 [e :U _PesoCambuca ]
 [f ]
-"94
-[; ;newmain.c: 94:     int peso;
-[v _peso `i ~T0 @X0 1 a ]
 "95
-[; ;newmain.c: 95:     _delay((unsigned long)((10)*(4000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+[; ;newmain.c: 95:     float peso;
+[v _peso `f ~T0 @X0 1 a ]
 "96
-[; ;newmain.c: 96:     ADCON0bits.CHS0 = 1;
-[e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
+[; ;newmain.c: 96:     _delay((unsigned long)((10)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
 "97
-[; ;newmain.c: 97:     _delay((unsigned long)((10)*(4000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+[; ;newmain.c: 97:     ADCON0bits.CHS0 = 1;
+[e = . . _ADCON0bits 1 2 -> -> 1 `i `uc ]
 "98
-[; ;newmain.c: 98:     ADCON0bits.CHS1 = 0;
-[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
+[; ;newmain.c: 98:     _delay((unsigned long)((10)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
 "99
-[; ;newmain.c: 99:     _delay((unsigned long)((10)*(4000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+[; ;newmain.c: 99:     ADCON0bits.CHS1 = 0;
+[e = . . _ADCON0bits 1 3 -> -> 0 `i `uc ]
 "100
-[; ;newmain.c: 100:     ADCON0bits.CHS2 = 0;
-[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
+[; ;newmain.c: 100:     _delay((unsigned long)((10)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
 "101
-[; ;newmain.c: 101:     _delay((unsigned long)((10)*(4000000/4000000.0)));
-[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+[; ;newmain.c: 101:     ADCON0bits.CHS2 = 0;
+[e = . . _ADCON0bits 1 4 -> -> 0 `i `uc ]
 "102
-[; ;newmain.c: 102:     ADCON0bits.GO = 1;
-[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
-"103
-[; ;newmain.c: 103:     _delay((unsigned long)((10)*(4000000/4000000.0)));
+[; ;newmain.c: 102:     _delay((unsigned long)((10)*(4000000/4000000.0)));
 [e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
+"103
+[; ;newmain.c: 103:     ADCON0bits.GO = 1;
+[e = . . _ADCON0bits 1 1 -> -> 1 `i `uc ]
 "104
-[; ;newmain.c: 104:     peso = ADRESH;
-[e = _peso -> _ADRESH `i ]
+[; ;newmain.c: 104:     _delay((unsigned long)((10)*(4000000/4000000.0)));
+[e ( __delay (1 -> * -> -> 10 `i `d / -> -> 4000000 `l `d .4000000.0 `ul ]
 "105
-[; ;newmain.c: 105:     return peso;
+[; ;newmain.c: 105:     peso = ADRESH;
+[e = _peso -> _ADRESH `f ]
+"106
+[; ;newmain.c: 106:     return peso;
 [e ) _peso ]
 [e $UE 126  ]
-"106
-[; ;newmain.c: 106: }
+"107
+[; ;newmain.c: 107: }
 [e :UE 126 ]
 }
-"108
-[; ;newmain.c: 108: void Lcd_Padrao(){
+"109
+[; ;newmain.c: 109: void Lcd_Padrao(){
 [v _Lcd_Padrao `(v ~T0 @X0 1 ef ]
 {
 [e :U _Lcd_Padrao ]
 [f ]
-"109
-[; ;newmain.c: 109:     Lcd_Clear();
-[e ( _Lcd_Clear ..  ]
 "110
-[; ;newmain.c: 110:     Lcd_Set_Cursor(1,1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+[; ;newmain.c: 110:     char buffer[20];
+[v _buffer `uc ~T0 @X0 -> 20 `i a ]
 "111
-[; ;newmain.c: 111:     Lcd_Write_String("SIGMA DOG");
-[e ( _Lcd_Write_String (1 :s 3C ]
+[; ;newmain.c: 111:     int nivel_cambuca = (int)(PesoCambuca()*100)/255;
+[v _nivel_cambuca `i ~T0 @X0 1 a ]
+[e = _nivel_cambuca / -> * ( _PesoCambuca ..  -> -> 100 `i `f `i -> 255 `i ]
 "112
-[; ;newmain.c: 112:     Lcd_Set_Cursor(2,1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+[; ;newmain.c: 112:     int nivel_estoque = (int)(PesoEstoque()*100)/255;
+[v _nivel_estoque `i ~T0 @X0 1 a ]
+[e = _nivel_estoque / -> * ( _PesoEstoque ..  -> -> 100 `i `f `i -> 255 `i ]
 "113
-[; ;newmain.c: 113:     Lcd_Write_String("GRINDSET");
-[e ( _Lcd_Write_String (1 :s 4C ]
+[; ;newmain.c: 113:     if(aux_lcd == 0 || aux_aviso == 1){
+[e $ ! || == _aux_lcd -> 0 `i == _aux_aviso -> 1 `i 128  ]
+{
 "114
-[; ;newmain.c: 114: }
+[; ;newmain.c: 114:         sprintf(buffer, "Estoque = %d%%", nivel_estoque);
+[e ( _sprintf (1 , (. , &U _buffer :s 3C _nivel_estoque ]
+"115
+[; ;newmain.c: 115:         Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
+"116
+[; ;newmain.c: 116:         Lcd_Set_Cursor(1,1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"117
+[; ;newmain.c: 117:         Lcd_Write_String(buffer);
+[e ( _Lcd_Write_String (1 &U _buffer ]
+"118
+[; ;newmain.c: 118:         sprintf(buffer, "Cambuca = %d%%", nivel_cambuca);
+[e ( _sprintf (1 , (. , &U _buffer :s 4C _nivel_cambuca ]
+"119
+[; ;newmain.c: 119:         Lcd_Set_Cursor(2,1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"120
+[; ;newmain.c: 120:         Lcd_Write_String(buffer);
+[e ( _Lcd_Write_String (1 &U _buffer ]
+"121
+[; ;newmain.c: 121:         aux_lcd = 1;
+[e = _aux_lcd -> 1 `i ]
+"122
+[; ;newmain.c: 122:         aux_cambuca = (PesoCambuca()*100)/255;
+[e = _aux_cambuca -> / * ( _PesoCambuca ..  -> -> 100 `i `f -> -> 255 `i `f `i ]
+"123
+[; ;newmain.c: 123:         aux_estoque = (PesoEstoque()*100)/255;
+[e = _aux_estoque -> / * ( _PesoEstoque ..  -> -> 100 `i `f -> -> 255 `i `f `i ]
+"124
+[; ;newmain.c: 124:         if(aux_aviso == 1){
+[e $ ! == _aux_aviso -> 1 `i 129  ]
+{
+"125
+[; ;newmain.c: 125:             _delay((unsigned long)((2000)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"126
+[; ;newmain.c: 126:         }
+}
+[e :U 129 ]
+"127
+[; ;newmain.c: 127:         aux_aviso = 0;
+[e = _aux_aviso -> 0 `i ]
+"128
+[; ;newmain.c: 128:         __asm("clrwdt");
+[; <" clrwdt ;# ">
+"129
+[; ;newmain.c: 129:     }
+}
+[e :U 128 ]
+"130
+[; ;newmain.c: 130:     if(aux_cambuca != nivel_cambuca || aux_estoque != nivel_estoque){
+[e $ ! || != _aux_cambuca _nivel_cambuca != _aux_estoque _nivel_estoque 130  ]
+{
+"131
+[; ;newmain.c: 131:         aux_cambuca = nivel_cambuca;
+[e = _aux_cambuca _nivel_cambuca ]
+"132
+[; ;newmain.c: 132:         aux_estoque = nivel_estoque;
+[e = _aux_estoque _nivel_estoque ]
+"133
+[; ;newmain.c: 133:         sprintf(buffer, "Estoque = %d%%", nivel_estoque);
+[e ( _sprintf (1 , (. , &U _buffer :s 5C _nivel_estoque ]
+"134
+[; ;newmain.c: 134:         Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
+"135
+[; ;newmain.c: 135:         Lcd_Set_Cursor(1,1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"136
+[; ;newmain.c: 136:         Lcd_Write_String(buffer);
+[e ( _Lcd_Write_String (1 &U _buffer ]
+"137
+[; ;newmain.c: 137:         sprintf(buffer, "Cambuca = %d%%", nivel_cambuca);
+[e ( _sprintf (1 , (. , &U _buffer :s 6C _nivel_cambuca ]
+"138
+[; ;newmain.c: 138:         Lcd_Set_Cursor(2,1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"139
+[; ;newmain.c: 139:         Lcd_Write_String(buffer);
+[e ( _Lcd_Write_String (1 &U _buffer ]
+"140
+[; ;newmain.c: 140:     }
+}
+[e :U 130 ]
+"149
+[; ;newmain.c: 149: }
 [e :UE 127 ]
 }
 [v $root$_main `(v ~T0 @X0 0 e ]
-"116
-[; ;newmain.c: 116: void main(void) {
+"151
+[; ;newmain.c: 151: void main(void) {
 [v _main `(v ~T0 @X0 1 ef ]
 {
 [e :U _main ]
 [f ]
-"117
-[; ;newmain.c: 117:     TRISA = 0b11111111;
+"152
+[; ;newmain.c: 152:     TRISA = 0b11111111;
 [e = _TRISA -> -> 255 `i `uc ]
-"118
-[; ;newmain.c: 118:     TRISB = 0b00000111;
-[e = _TRISB -> -> 7 `i `uc ]
-"119
-[; ;newmain.c: 119:     TRISC = 0;
-[e = _TRISC -> -> 0 `i `uc ]
-"120
-[; ;newmain.c: 120:     TRISD = 0;
-[e = _TRISD -> -> 0 `i `uc ]
-"121
-[; ;newmain.c: 121:     OPTION_REG = 0b00111111;
-[e = _OPTION_REG -> -> 63 `i `uc ]
-"122
-[; ;newmain.c: 122:     PORTA = 0;
-[e = _PORTA -> -> 0 `i `uc ]
-"123
-[; ;newmain.c: 123:     PORTB = 0;
-[e = _PORTB -> -> 0 `i `uc ]
-"124
-[; ;newmain.c: 124:     PORTC = 0;
-[e = _PORTC -> -> 0 `i `uc ]
-"125
-[; ;newmain.c: 125:     PORTD = 0;
-[e = _PORTD -> -> 0 `i `uc ]
-"127
-[; ;newmain.c: 127:     INTCONbits.GIE = 1;
-[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
-"128
-[; ;newmain.c: 128:     INTCONbits.PEIE = 1;
-[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
-"129
-[; ;newmain.c: 129:     INTCONbits.INTE=1;
-[e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
-"131
-[; ;newmain.c: 131:     PIE1bits.TMR1IE = 1;
-[e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
-"132
-[; ;newmain.c: 132:     T1CONbits.TMR1CS = 0;
-[e = . . _T1CONbits 0 1 -> -> 0 `i `uc ]
-"134
-[; ;newmain.c: 134:     T1CONbits.T1CKPS0 = 1;
-[e = . . _T1CONbits 1 3 -> -> 1 `i `uc ]
-"135
-[; ;newmain.c: 135:     T1CONbits.T1CKPS1 = 1;
-[e = . . _T1CONbits 1 4 -> -> 1 `i `uc ]
-"141
-[; ;newmain.c: 141:     TMR1L = 0xDC;
-[e = _TMR1L -> -> 220 `i `uc ]
-"142
-[; ;newmain.c: 142:     TMR1H = 0X0B;
-[e = _TMR1H -> -> 11 `i `uc ]
-"145
-[; ;newmain.c: 145:     ADCON1bits.PCFG0 = 0;
-[e = . . _ADCON1bits 1 0 -> -> 0 `i `uc ]
-"146
-[; ;newmain.c: 146:     ADCON1bits.PCFG1 = 0;
-[e = . . _ADCON1bits 1 1 -> -> 0 `i `uc ]
-"147
-[; ;newmain.c: 147:     ADCON1bits.PCFG2 = 0;
-[e = . . _ADCON1bits 1 2 -> -> 0 `i `uc ]
-"148
-[; ;newmain.c: 148:     ADCON1bits.PCFG3 = 0;
-[e = . . _ADCON1bits 1 3 -> -> 0 `i `uc ]
-"150
-[; ;newmain.c: 150:  ADCON0bits.ADCS0 = 0;
-[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
-"151
-[; ;newmain.c: 151:     ADCON0bits.ADCS1 = 0;
-[e = . . _ADCON0bits 1 6 -> -> 0 `i `uc ]
 "153
-[; ;newmain.c: 153:     ADCON1bits.ADFM = 0;
-[e = . . _ADCON1bits 0 3 -> -> 0 `i `uc ]
+[; ;newmain.c: 153:     TRISB = 0b00000111;
+[e = _TRISB -> -> 7 `i `uc ]
+"154
+[; ;newmain.c: 154:     TRISC = 0;
+[e = _TRISC -> -> 0 `i `uc ]
+"155
+[; ;newmain.c: 155:     TRISD = 0;
+[e = _TRISD -> -> 0 `i `uc ]
 "156
-[; ;newmain.c: 156:     ADRESL = 0x00;
-[e = _ADRESL -> -> 0 `i `uc ]
+[; ;newmain.c: 156:     OPTION_REG = 0b00111111;
+[e = _OPTION_REG -> -> 63 `i `uc ]
 "157
-[; ;newmain.c: 157:     ADRESH = 0x00;
-[e = _ADRESH -> -> 0 `i `uc ]
+[; ;newmain.c: 157:     PORTA = 0;
+[e = _PORTA -> -> 0 `i `uc ]
+"158
+[; ;newmain.c: 158:     PORTB = 0;
+[e = _PORTB -> -> 0 `i `uc ]
 "159
-[; ;newmain.c: 159:     ADCON0bits.ADON = 1;
-[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
+[; ;newmain.c: 159:     PORTC = 0;
+[e = _PORTC -> -> 0 `i `uc ]
+"160
+[; ;newmain.c: 160:     PORTD = 0;
+[e = _PORTD -> -> 0 `i `uc ]
+"162
+[; ;newmain.c: 162:     INTCONbits.GIE = 1;
+[e = . . _INTCONbits 0 7 -> -> 1 `i `uc ]
 "163
-[; ;newmain.c: 163:     OPTION_REGbits.PSA = 1;
-[e = . . _OPTION_REGbits 0 1 -> -> 1 `i `uc ]
-"165
-[; ;newmain.c: 165:     OPTION_REGbits.PS0 = 1;
-[e = . . _OPTION_REGbits 1 0 -> -> 1 `i `uc ]
+[; ;newmain.c: 163:     INTCONbits.PEIE = 1;
+[e = . . _INTCONbits 0 6 -> -> 1 `i `uc ]
+"164
+[; ;newmain.c: 164:     INTCONbits.INTE=1;
+[e = . . _INTCONbits 0 4 -> -> 1 `i `uc ]
 "166
-[; ;newmain.c: 166:     OPTION_REGbits.PS1 = 1;
-[e = . . _OPTION_REGbits 1 1 -> -> 1 `i `uc ]
+[; ;newmain.c: 166:     PIE1bits.TMR1IE = 1;
+[e = . . _PIE1bits 0 0 -> -> 1 `i `uc ]
 "167
-[; ;newmain.c: 167:     OPTION_REGbits.PS2 = 1;
-[e = . . _OPTION_REGbits 1 2 -> -> 1 `i `uc ]
+[; ;newmain.c: 167:     T1CONbits.TMR1CS = 0;
+[e = . . _T1CONbits 0 1 -> -> 0 `i `uc ]
+"169
+[; ;newmain.c: 169:     T1CONbits.T1CKPS0 = 1;
+[e = . . _T1CONbits 1 3 -> -> 1 `i `uc ]
 "170
-[; ;newmain.c: 170:     __asm("clrwdt");
-[; <" clrwdt ;# ">
-"171
-[; ;newmain.c: 171:     Lcd_Init();
-[e ( _Lcd_Init ..  ]
-"172
-[; ;newmain.c: 172:     Lcd_Padrao();
-[e ( _Lcd_Padrao ..  ]
-"173
-[; ;newmain.c: 173:     PORTDbits.RD5 = 1;
-[e = . . _PORTDbits 0 5 -> -> 1 `i `uc ]
-"174
-[; ;newmain.c: 174:     interrupcao = 0;
-[e = _interrupcao -> 0 `i ]
-"175
-[; ;newmain.c: 175:     aux_timer = 0;
-[e = _aux_timer -> 0 `i ]
+[; ;newmain.c: 170:     T1CONbits.T1CKPS1 = 1;
+[e = . . _T1CONbits 1 4 -> -> 1 `i `uc ]
 "176
-[; ;newmain.c: 176:     while(1){
-[e :U 130 ]
-{
+[; ;newmain.c: 176:     TMR1L = 0xDC;
+[e = _TMR1L -> -> 220 `i `uc ]
 "177
-[; ;newmain.c: 177:         __asm("clrwdt");
+[; ;newmain.c: 177:     TMR1H = 0X0B;
+[e = _TMR1H -> -> 11 `i `uc ]
+"180
+[; ;newmain.c: 180:     ADCON1bits.PCFG0 = 0;
+[e = . . _ADCON1bits 1 0 -> -> 0 `i `uc ]
+"181
+[; ;newmain.c: 181:     ADCON1bits.PCFG1 = 0;
+[e = . . _ADCON1bits 1 1 -> -> 0 `i `uc ]
+"182
+[; ;newmain.c: 182:     ADCON1bits.PCFG2 = 0;
+[e = . . _ADCON1bits 1 2 -> -> 0 `i `uc ]
+"183
+[; ;newmain.c: 183:     ADCON1bits.PCFG3 = 0;
+[e = . . _ADCON1bits 1 3 -> -> 0 `i `uc ]
+"185
+[; ;newmain.c: 185:  ADCON0bits.ADCS0 = 0;
+[e = . . _ADCON0bits 1 5 -> -> 0 `i `uc ]
+"186
+[; ;newmain.c: 186:     ADCON0bits.ADCS1 = 0;
+[e = . . _ADCON0bits 1 6 -> -> 0 `i `uc ]
+"188
+[; ;newmain.c: 188:     ADCON1bits.ADFM = 0;
+[e = . . _ADCON1bits 0 3 -> -> 0 `i `uc ]
+"191
+[; ;newmain.c: 191:     ADRESL = 0x00;
+[e = _ADRESL -> -> 0 `i `uc ]
+"192
+[; ;newmain.c: 192:     ADRESH = 0x00;
+[e = _ADRESH -> -> 0 `i `uc ]
+"194
+[; ;newmain.c: 194:     ADCON0bits.ADON = 1;
+[e = . . _ADCON0bits 0 0 -> -> 1 `i `uc ]
+"198
+[; ;newmain.c: 198:     OPTION_REGbits.PSA = 1;
+[e = . . _OPTION_REGbits 0 1 -> -> 1 `i `uc ]
+"200
+[; ;newmain.c: 200:     OPTION_REGbits.PS0 = 1;
+[e = . . _OPTION_REGbits 1 0 -> -> 1 `i `uc ]
+"201
+[; ;newmain.c: 201:     OPTION_REGbits.PS1 = 1;
+[e = . . _OPTION_REGbits 1 1 -> -> 1 `i `uc ]
+"202
+[; ;newmain.c: 202:     OPTION_REGbits.PS2 = 1;
+[e = . . _OPTION_REGbits 1 2 -> -> 1 `i `uc ]
+"205
+[; ;newmain.c: 205:     __asm("clrwdt");
 [; <" clrwdt ;# ">
-"178
-[; ;newmain.c: 178:         while(interrupcao == 1){
-[e $U 132  ]
+"206
+[; ;newmain.c: 206:     Lcd_Init();
+[e ( _Lcd_Init ..  ]
+"207
+[; ;newmain.c: 207:     Lcd_Padrao();
+[e ( _Lcd_Padrao ..  ]
+"208
+[; ;newmain.c: 208:     PORTDbits.RD5 = 1;
+[e = . . _PORTDbits 0 5 -> -> 1 `i `uc ]
+"209
+[; ;newmain.c: 209:     interrupcao = 0;
+[e = _interrupcao -> 0 `i ]
+"210
+[; ;newmain.c: 210:     aux_timer = 0;
+[e = _aux_timer -> 0 `i ]
+"211
+[; ;newmain.c: 211:     aux_lcd = 0;
+[e = _aux_lcd -> 0 `i ]
+"213
+[; ;newmain.c: 213:     while(1){
 [e :U 133 ]
 {
-"181
-[; ;newmain.c: 181:             if(PORTBbits.RB1 == 0){
-[e $ ! == -> . . _PORTBbits 0 1 `i -> 0 `i 135  ]
-{
-"182
-[; ;newmain.c: 182:                 interrupcao = 0;
-[e = _interrupcao -> 0 `i ]
-"183
-[; ;newmain.c: 183:                 Lcd_Padrao();
-[e ( _Lcd_Padrao ..  ]
-"184
-[; ;newmain.c: 184:             }
-}
-[e :U 135 ]
-"185
-[; ;newmain.c: 185:         }
-}
-[e :U 132 ]
-"178
-[; ;newmain.c: 178:         while(interrupcao == 1){
-[e $ == _interrupcao -> 1 `i 133  ]
-[e :U 134 ]
-"186
-[; ;newmain.c: 186:         if(PORTBbits.RB2 == 0){
-[e $ ! == -> . . _PORTBbits 0 2 `i -> 0 `i 136  ]
-{
-"187
-[; ;newmain.c: 187:             __asm("clrwdt");
-[; <" clrwdt ;# ">
-"188
-[; ;newmain.c: 188:             aux_timer = 0;
-[e = _aux_timer -> 0 `i ]
-"189
-[; ;newmain.c: 189:             Lcd_Clear();
-[e ( _Lcd_Clear ..  ]
-"190
-[; ;newmain.c: 190:             Lcd_Set_Cursor(1,1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"191
-[; ;newmain.c: 191:             Lcd_Write_String("DESPEJANDO...");
-[e ( _Lcd_Write_String (1 :s 5C ]
-"192
-[; ;newmain.c: 192:             T1CONbits.TMR1ON = 1;
-[e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
-"193
-[; ;newmain.c: 193:             while (aux_timer == 0 && interrupcao == 0){
-[e $U 137  ]
-[e :U 138 ]
-{
-"194
-[; ;newmain.c: 194:                 PORTDbits.RD7 = 1;
-[e = . . _PORTDbits 0 7 -> -> 1 `i `uc ]
-"195
-[; ;newmain.c: 195:             };
-}
-[e :U 137 ]
-"193
-[; ;newmain.c: 193:             while (aux_timer == 0 && interrupcao == 0){
-[e $ && == _aux_timer -> 0 `i == _interrupcao -> 0 `i 138  ]
-[e :U 139 ]
-"196
-[; ;newmain.c: 196:             PORTDbits.RD7 = 0;
-[e = . . _PORTDbits 0 7 -> -> 0 `i `uc ]
-"197
-[; ;newmain.c: 197:             if(interrupcao == 0){
-[e $ ! == _interrupcao -> 0 `i 140  ]
-{
-"198
-[; ;newmain.c: 198:                 Lcd_Clear();
-[e ( _Lcd_Clear ..  ]
-"199
-[; ;newmain.c: 199:                 Lcd_Set_Cursor(1,1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"200
-[; ;newmain.c: 200:                 Lcd_Write_String("RACAO COLOCADA.");
-[e ( _Lcd_Write_String (1 :s 6C ]
-"201
-[; ;newmain.c: 201:                 _delay((unsigned long)((2000)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"202
-[; ;newmain.c: 202:                 Lcd_Padrao();
-[e ( _Lcd_Padrao ..  ]
-"203
-[; ;newmain.c: 203:             }
-}
-[e :U 140 ]
-"204
-[; ;newmain.c: 204:         }
-}
-[e :U 136 ]
-"205
-[; ;newmain.c: 205:         if(PesoCambuca()<= 51 && PesoEstoque() > 51 && interrupcao == 0){
-[e $ ! && && <= ( _PesoCambuca ..  -> 51 `i > ( _PesoEstoque ..  -> 51 `i == _interrupcao -> 0 `i 141  ]
-{
-"206
-[; ;newmain.c: 206:             __asm("clrwdt");
-[; <" clrwdt ;# ">
-"207
-[; ;newmain.c: 207:             Lcd_Clear();
-[e ( _Lcd_Clear ..  ]
-"208
-[; ;newmain.c: 208:             Lcd_Set_Cursor(1,1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"209
-[; ;newmain.c: 209:             Lcd_Write_String("DESPEJANDO...");
-[e ( _Lcd_Write_String (1 :s 7C ]
-"210
-[; ;newmain.c: 210:             while(PesoCambuca() <= 204 && PesoEstoque() > 51){
-[e $U 142  ]
-[e :U 143 ]
-{
-"212
-[; ;newmain.c: 212:                 __asm("clrwdt");
-[; <" clrwdt ;# ">
-"213
-[; ;newmain.c: 213:                 if(interrupcao == 1){
-[e $ ! == _interrupcao -> 1 `i 145  ]
-{
 "214
-[; ;newmain.c: 214:                     break;
-[e $U 144  ]
+[; ;newmain.c: 214:         Lcd_Padrao();
+[e ( _Lcd_Padrao ..  ]
 "215
-[; ;newmain.c: 215:                 }
-}
-[e :U 145 ]
+[; ;newmain.c: 215:         __asm("clrwdt");
+[; <" clrwdt ;# ">
 "216
-[; ;newmain.c: 216:                 PORTDbits.RD7 = 1;
-[e = . . _PORTDbits 0 7 -> -> 1 `i `uc ]
-"217
-[; ;newmain.c: 217:             }
-}
-[e :U 142 ]
-"210
-[; ;newmain.c: 210:             while(PesoCambuca() <= 204 && PesoEstoque() > 51){
-[e $ && <= ( _PesoCambuca ..  -> 204 `i > ( _PesoEstoque ..  -> 51 `i 143  ]
-[e :U 144 ]
-"218
-[; ;newmain.c: 218:             if(interrupcao == 0){
-[e $ ! == _interrupcao -> 0 `i 146  ]
+[; ;newmain.c: 216:         while(interrupcao == 1){
+[e $U 135  ]
+[e :U 136 ]
 {
 "219
-[; ;newmain.c: 219:                 PORTDbits.RD7 = 0;
-[e = . . _PORTDbits 0 7 -> -> 0 `i `uc ]
+[; ;newmain.c: 219:             if(PORTBbits.RB1 == 0){
+[e $ ! == -> . . _PORTBbits 0 1 `i -> 0 `i 138  ]
+{
 "220
-[; ;newmain.c: 220:                 Lcd_Clear();
-[e ( _Lcd_Clear ..  ]
+[; ;newmain.c: 220:                 interrupcao = 0;
+[e = _interrupcao -> 0 `i ]
 "221
-[; ;newmain.c: 221:                 Lcd_Set_Cursor(1,1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"222
-[; ;newmain.c: 222:                 Lcd_Write_String("RACAO COLOCADA.");
-[e ( _Lcd_Write_String (1 :s 8C ]
-"223
-[; ;newmain.c: 223:                 _delay((unsigned long)((2000)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"224
-[; ;newmain.c: 224:                 Lcd_Padrao();
+[; ;newmain.c: 221:                 Lcd_Padrao();
 [e ( _Lcd_Padrao ..  ]
+"222
+[; ;newmain.c: 222:             }
+}
+[e :U 138 ]
+"223
+[; ;newmain.c: 223:         }
+}
+[e :U 135 ]
+"216
+[; ;newmain.c: 216:         while(interrupcao == 1){
+[e $ == _interrupcao -> 1 `i 136  ]
+[e :U 137 ]
+"224
+[; ;newmain.c: 224:         if(PORTBbits.RB2 == 0){
+[e $ ! == -> . . _PORTBbits 0 2 `i -> 0 `i 139  ]
+{
 "225
-[; ;newmain.c: 225:             }
-}
-[e :U 146 ]
-"226
-[; ;newmain.c: 226:         }
-}
-[e :U 141 ]
-"227
-[; ;newmain.c: 227:        if(PesoEstoque() <= 51)
-[e $ ! <= ( _PesoEstoque ..  -> 51 `i 147  ]
-"228
-[; ;newmain.c: 228:        {
-{
-"229
-[; ;newmain.c: 229:            __asm("clrwdt");
+[; ;newmain.c: 225:             __asm("clrwdt");
 [; <" clrwdt ;# ">
-"230
-[; ;newmain.c: 230:            aux_timer = 0;
+"226
+[; ;newmain.c: 226:             aux_timer = 0;
 [e = _aux_timer -> 0 `i ]
-"231
-[; ;newmain.c: 231:            PORTDbits.RD6 = 1;
-[e = . . _PORTDbits 0 6 -> -> 1 `i `uc ]
-"232
-[; ;newmain.c: 232:            Lcd_Clear();
+"227
+[; ;newmain.c: 227:             Lcd_Clear();
 [e ( _Lcd_Clear ..  ]
-"233
-[; ;newmain.c: 233:            Lcd_Set_Cursor(1,1);
+"228
+[; ;newmain.c: 228:             Lcd_Set_Cursor(1,1);
 [e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
-"234
-[; ;newmain.c: 234:            Lcd_Write_String("ESTOQUE EM NIVEL");
-[e ( _Lcd_Write_String (1 :s 9C ]
-"235
-[; ;newmain.c: 235:            Lcd_Set_Cursor(2,1);
-[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
-"236
-[; ;newmain.c: 236:            Lcd_Write_String("BAIXO...");
-[e ( _Lcd_Write_String (1 :s 10C ]
-"237
-[; ;newmain.c: 237:            T1CONbits.TMR1ON = 1;
+"229
+[; ;newmain.c: 229:             Lcd_Write_String("DESPEJANDO...");
+[e ( _Lcd_Write_String (1 :s 7C ]
+"230
+[; ;newmain.c: 230:             T1CONbits.TMR1ON = 1;
 [e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
+"231
+[; ;newmain.c: 231:             while (aux_timer == 0 && interrupcao == 0){
+[e $U 140  ]
+[e :U 141 ]
+{
+"232
+[; ;newmain.c: 232:                 PORTDbits.RD7 = 1;
+[e = . . _PORTDbits 0 7 -> -> 1 `i `uc ]
+"233
+[; ;newmain.c: 233:             };
+}
+[e :U 140 ]
+"231
+[; ;newmain.c: 231:             while (aux_timer == 0 && interrupcao == 0){
+[e $ && == _aux_timer -> 0 `i == _interrupcao -> 0 `i 141  ]
+[e :U 142 ]
+"234
+[; ;newmain.c: 234:             PORTDbits.RD7 = 0;
+[e = . . _PORTDbits 0 7 -> -> 0 `i `uc ]
+"235
+[; ;newmain.c: 235:             if(interrupcao == 0){
+[e $ ! == _interrupcao -> 0 `i 143  ]
+{
+"236
+[; ;newmain.c: 236:                 Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
+"237
+[; ;newmain.c: 237:                 Lcd_Set_Cursor(1,1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
 "238
-[; ;newmain.c: 238:            while(aux_timer == 0 && PORTBbits.RB2 == 1){
-[e $U 148  ]
-[e :U 149 ]
-{
+[; ;newmain.c: 238:                 Lcd_Write_String("RACAO COLOCADA.");
+[e ( _Lcd_Write_String (1 :s 8C ]
 "239
-[; ;newmain.c: 239:                if(interrupcao == 1){
-[e $ ! == _interrupcao -> 1 `i 151  ]
-{
+[; ;newmain.c: 239:                 _delay((unsigned long)((2000)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
 "240
-[; ;newmain.c: 240:                     break;
-[e $U 150  ]
+[; ;newmain.c: 240:                 Lcd_Padrao();
+[e ( _Lcd_Padrao ..  ]
 "241
-[; ;newmain.c: 241:                }
+[; ;newmain.c: 241:             }
 }
-[e $U 152  ]
+[e :U 143 ]
 "242
-[; ;newmain.c: 242:                else if(PesoEstoque() > 51){
-[e :U 151 ]
-[e $ ! > ( _PesoEstoque ..  -> 51 `i 153  ]
-{
-"243
-[; ;newmain.c: 243:                    break;
-[e $U 150  ]
-"244
-[; ;newmain.c: 244:                }
+[; ;newmain.c: 242:         }
 }
-[e :U 153 ]
-[e :U 152 ]
+[e :U 139 ]
+"243
+[; ;newmain.c: 243:         if(PesoCambuca()<= 51 && PesoEstoque() > 51 && interrupcao == 0){
+[e $ ! && && <= ( _PesoCambuca ..  -> -> 51 `i `f > ( _PesoEstoque ..  -> -> 51 `i `f == _interrupcao -> 0 `i 144  ]
+{
+"244
+[; ;newmain.c: 244:             __asm("clrwdt");
+[; <" clrwdt ;# ">
 "245
-[; ;newmain.c: 245:             };
+[; ;newmain.c: 245:             Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
+"246
+[; ;newmain.c: 246:             Lcd_Set_Cursor(1,1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"247
+[; ;newmain.c: 247:             Lcd_Write_String("DESPEJANDO...");
+[e ( _Lcd_Write_String (1 :s 9C ]
+"248
+[; ;newmain.c: 248:             while(PesoCambuca() < 204 && PesoEstoque() > 51){
+[e $U 145  ]
+[e :U 146 ]
+{
+"249
+[; ;newmain.c: 249:                 __asm("clrwdt");
+[; <" clrwdt ;# ">
+"250
+[; ;newmain.c: 250:                 if(interrupcao == 1){
+[e $ ! == _interrupcao -> 1 `i 148  ]
+{
+"251
+[; ;newmain.c: 251:                     break;
+[e $U 147  ]
+"252
+[; ;newmain.c: 252:                 }
 }
 [e :U 148 ]
-"238
-[; ;newmain.c: 238:            while(aux_timer == 0 && PORTBbits.RB2 == 1){
-[e $ && == _aux_timer -> 0 `i == -> . . _PORTBbits 0 2 `i -> 1 `i 149  ]
-[e :U 150 ]
-"246
-[; ;newmain.c: 246:            PORTDbits.RD6 = 0;
-[e = . . _PORTDbits 0 6 -> -> 0 `i `uc ]
-"247
-[; ;newmain.c: 247:            if(interrupcao == 0){
-[e $ ! == _interrupcao -> 0 `i 154  ]
-{
-"248
-[; ;newmain.c: 248:                 Lcd_Padrao();
-[e ( _Lcd_Padrao ..  ]
-"249
-[; ;newmain.c: 249:                 _delay((unsigned long)((2000)*(4000000/4000.0)));
-[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
-"250
-[; ;newmain.c: 250:            }
-}
-[e :U 154 ]
-"251
-[; ;newmain.c: 251:        }
-}
-[e :U 147 ]
-"252
-[; ;newmain.c: 252:     }
-}
-[e :U 129 ]
-[e $U 130  ]
-[e :U 131 ]
 "253
-[; ;newmain.c: 253:     return;
-[e $UE 128  ]
+[; ;newmain.c: 253:                 PORTDbits.RD7 = 1;
+[e = . . _PORTDbits 0 7 -> -> 1 `i `uc ]
 "254
-[; ;newmain.c: 254: }
-[e :UE 128 ]
+[; ;newmain.c: 254:             }
 }
-[a 4C 71 82 73 78 68 83 69 84 0 ]
+[e :U 145 ]
+"248
+[; ;newmain.c: 248:             while(PesoCambuca() < 204 && PesoEstoque() > 51){
+[e $ && < ( _PesoCambuca ..  -> -> 204 `i `f > ( _PesoEstoque ..  -> -> 51 `i `f 146  ]
+[e :U 147 ]
+"255
+[; ;newmain.c: 255:             if(interrupcao == 0){
+[e $ ! == _interrupcao -> 0 `i 149  ]
+{
+"256
+[; ;newmain.c: 256:                 PORTDbits.RD7 = 0;
+[e = . . _PORTDbits 0 7 -> -> 0 `i `uc ]
+"257
+[; ;newmain.c: 257:                 Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
+"258
+[; ;newmain.c: 258:                 Lcd_Set_Cursor(1,1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"259
+[; ;newmain.c: 259:                 Lcd_Write_String("RACAO COLOCADA.");
+[e ( _Lcd_Write_String (1 :s 10C ]
+"260
+[; ;newmain.c: 260:                 _delay((unsigned long)((2000)*(4000000/4000.0)));
+[e ( __delay (1 -> * -> -> 2000 `i `d / -> -> 4000000 `l `d .4000.0 `ul ]
+"261
+[; ;newmain.c: 261:                 Lcd_Padrao();
+[e ( _Lcd_Padrao ..  ]
+"262
+[; ;newmain.c: 262:             }
+}
+[e :U 149 ]
+"263
+[; ;newmain.c: 263:         }
+}
+[e :U 144 ]
+"264
+[; ;newmain.c: 264:        if(PesoEstoque() <= 51)
+[e $ ! <= ( _PesoEstoque ..  -> -> 51 `i `f 150  ]
+"265
+[; ;newmain.c: 265:        {
+{
+"266
+[; ;newmain.c: 266:            __asm("clrwdt");
+[; <" clrwdt ;# ">
+"267
+[; ;newmain.c: 267:            aux_aviso = 0;
+[e = _aux_aviso -> 0 `i ]
+"268
+[; ;newmain.c: 268:            aux_timer = 0;
+[e = _aux_timer -> 0 `i ]
+"269
+[; ;newmain.c: 269:            PORTDbits.RD6 = 1;
+[e = . . _PORTDbits 0 6 -> -> 1 `i `uc ]
+"270
+[; ;newmain.c: 270:            Lcd_Clear();
+[e ( _Lcd_Clear ..  ]
+"271
+[; ;newmain.c: 271:            Lcd_Set_Cursor(1,1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 1 `i `uc -> -> 1 `i `uc ]
+"272
+[; ;newmain.c: 272:            Lcd_Write_String("ESTOQUE EM NIVEL");
+[e ( _Lcd_Write_String (1 :s 11C ]
+"273
+[; ;newmain.c: 273:            Lcd_Set_Cursor(2,1);
+[e ( _Lcd_Set_Cursor (2 , -> -> 2 `i `uc -> -> 1 `i `uc ]
+"274
+[; ;newmain.c: 274:            Lcd_Write_String("BAIXO...");
+[e ( _Lcd_Write_String (1 :s 12C ]
+"275
+[; ;newmain.c: 275:            T1CONbits.TMR1ON = 1;
+[e = . . _T1CONbits 0 0 -> -> 1 `i `uc ]
+"276
+[; ;newmain.c: 276:            while(aux_timer == 0 && PORTBbits.RB2 == 1){
+[e $U 151  ]
+[e :U 152 ]
+{
+"277
+[; ;newmain.c: 277:                __asm("clrwdt");
+[; <" clrwdt ;# ">
+"278
+[; ;newmain.c: 278:                if(interrupcao == 1){
+[e $ ! == _interrupcao -> 1 `i 154  ]
+{
+"279
+[; ;newmain.c: 279:                     break;
+[e $U 153  ]
+"280
+[; ;newmain.c: 280:                }
+}
+[e $U 155  ]
+"281
+[; ;newmain.c: 281:                else if(PesoEstoque() > 51){
+[e :U 154 ]
+[e $ ! > ( _PesoEstoque ..  -> -> 51 `i `f 156  ]
+{
+"282
+[; ;newmain.c: 282:                    break;
+[e $U 153  ]
+"283
+[; ;newmain.c: 283:                }
+}
+[e :U 156 ]
+[e :U 155 ]
+"284
+[; ;newmain.c: 284:             };
+}
+[e :U 151 ]
+"276
+[; ;newmain.c: 276:            while(aux_timer == 0 && PORTBbits.RB2 == 1){
+[e $ && == _aux_timer -> 0 `i == -> . . _PORTBbits 0 2 `i -> 1 `i 152  ]
+[e :U 153 ]
+"285
+[; ;newmain.c: 285:            PORTDbits.RD6 = 0;
+[e = . . _PORTDbits 0 6 -> -> 0 `i `uc ]
+"286
+[; ;newmain.c: 286:            if(interrupcao == 0){
+[e $ ! == _interrupcao -> 0 `i 157  ]
+{
+"287
+[; ;newmain.c: 287:                aux_aviso = 1;
+[e = _aux_aviso -> 1 `i ]
+"288
+[; ;newmain.c: 288:            }
+}
+[e :U 157 ]
+"289
+[; ;newmain.c: 289:        }
+}
+[e :U 150 ]
+"290
+[; ;newmain.c: 290:     }
+}
+[e :U 132 ]
+[e $U 133  ]
+[e :U 134 ]
+"291
+[; ;newmain.c: 291:     return;
+[e $UE 131  ]
+"292
+[; ;newmain.c: 292: }
+[e :UE 131 ]
+}
+[p f _sprintf 9437312 ]
 [a 1C 70 85 78 67 73 79 78 65 77 69 78 84 79 0 ]
 [a 2C 73 78 84 69 82 82 79 77 80 73 68 79 0 ]
-[a 9C 69 83 84 79 81 85 69 32 69 77 32 78 73 86 69 76 0 ]
-[a 3C 83 73 71 77 65 32 68 79 71 0 ]
-[a 6C 82 65 67 65 79 32 67 79 76 79 67 65 68 65 46 0 ]
+[a 11C 69 83 84 79 81 85 69 32 69 77 32 78 73 86 69 76 0 ]
 [a 8C 82 65 67 65 79 32 67 79 76 79 67 65 68 65 46 0 ]
-[a 10C 66 65 73 88 79 46 46 46 0 ]
-[a 5C 68 69 83 80 69 74 65 78 68 79 46 46 46 0 ]
+[a 10C 82 65 67 65 79 32 67 79 76 79 67 65 68 65 46 0 ]
+[a 12C 66 65 73 88 79 46 46 46 0 ]
 [a 7C 68 69 83 80 69 74 65 78 68 79 46 46 46 0 ]
+[a 9C 68 69 83 80 69 74 65 78 68 79 46 46 46 0 ]
+[a 3C 69 115 116 111 113 117 101 32 61 32 37 100 37 37 0 ]
+[a 5C 69 115 116 111 113 117 101 32 61 32 37 100 37 37 0 ]
+[a 4C 67 97 109 98 117 99 97 32 61 32 37 100 37 37 0 ]
+[a 6C 67 97 109 98 117 99 97 32 61 32 37 100 37 37 0 ]
