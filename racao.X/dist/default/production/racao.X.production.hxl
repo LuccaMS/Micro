@@ -12,14 +12,14 @@
   0h - 5h		(dist/default/production\racao.X.production.hex)
   8h - FF9h		(dist/default/production\racao.X.production.hex)
   1000h - 1115h		(dist/default/production\racao.X.production.hex)
-  112Ah - 1FFFh		(dist/default/production\racao.X.production.hex)
-  29BCh - 2FFFh		(dist/default/production\racao.X.production.hex)
+  1118h - 1FFFh		(dist/default/production\racao.X.production.hex)
+  29D4h - 2FFFh		(dist/default/production\racao.X.production.hex)
   400Eh - 400Fh		(dist/default/production\racao.X.production.hex)
  Unused ranges:
   6h - 7h
   FFAh - FFFh
-  1116h - 1129h
-  2000h - 29BBh
+  1116h - 1117h
+  2000h - 29D3h
   3000h - 400Dh
 
 ### Hex Memory Map ###
@@ -302,8 +302,8 @@
 000010E0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000010F0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001100 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-00001110 | H1 H1 H1 H1 H1 H1 -- -- -- -- -- -- -- -- -- --
-00001120 | -- -- -- -- -- -- -- -- -- -- H1 H1 H1 H1 H1 H1
+00001110 | H1 H1 H1 H1 H1 H1 -- -- H1 H1 H1 H1 H1 H1 H1 H1
+00001120 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001130 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001140 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001150 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
@@ -542,9 +542,7 @@
 00001FE0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00001FF0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 ----------------------------------------------------------
-000029B0 | -- -- -- -- -- -- -- -- -- -- -- -- H1 H1 H1 H1
-000029C0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
-000029D0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
+000029D0 | -- -- -- -- H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000029E0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 000029F0 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1
 00002A00 | H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1 H1

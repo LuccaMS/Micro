@@ -2105,7 +2105,6 @@ void main(void) {
     OPTION_REGbits.PS1 = 1;
     OPTION_REGbits.PS2 = 1;
 
-
     __asm("clrwdt");
     Lcd_Init();
     Lcd_Padrao();
@@ -2118,8 +2117,6 @@ void main(void) {
         Lcd_Padrao();
         __asm("clrwdt");
         while(interrupcao == 1){
-
-
             if(PORTBbits.RB1 == 0){
                 interrupcao = 0;
                 Lcd_Padrao();
@@ -2178,7 +2175,7 @@ void main(void) {
            Lcd_Write_String("BAIXO...");
            T1CONbits.TMR1ON = 1;
            while(aux_timer == 0 && PORTBbits.RB2 == 1){
-               __asm("clrwdt");
+
                if(interrupcao == 1){
                     break;
                }

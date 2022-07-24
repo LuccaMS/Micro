@@ -1,6 +1,6 @@
 /*
  * File:   newmain.c
- * Author: Lucca Machado da silva (19208083)
+ * Author: Lucca Machado da silva (19207083) e Matheus Avila Naspolini (19207851)
  *
  * Created on 19 de Julho de 2022, 10:44
  */
@@ -271,7 +271,7 @@ void main(void) {
            Lcd_Write_String("BAIXO...");
            T1CONbits.TMR1ON = 1;
            while(aux_timer == 0 && btn_despejo == 1){
-               CLRWDT();
+               //CLRWDT(); já limpados o watchdog no timer
                if(interrupcao == 1){
                     break;
                }
