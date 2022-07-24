@@ -200,8 +200,7 @@ void main(void) {
     OPTION_REGbits.PS0 = 1;
     OPTION_REGbits.PS1 = 1;
     OPTION_REGbits.PS2 = 1;
-    // 72 ms para o watchdog time
-    
+
     CLRWDT();
     Lcd_Init();
     Lcd_Padrao();
@@ -214,8 +213,6 @@ void main(void) {
         Lcd_Padrao();
         CLRWDT();
         while(interrupcao == 1){
-            // não iremos usar o watchdog aqui, porque se ele apertar na interrupção e demorar muito até apertar o reinicio novamente
-            //iremos resetar o microcontrolador
             if(btn_reinicio == 0){
                 interrupcao = 0;
                 Lcd_Padrao();

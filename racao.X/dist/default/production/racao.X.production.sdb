@@ -3,7 +3,7 @@
 [d edition pro ]
 [d chip 16F877A ]
 [d frameptr 0 ]
-"3 C:\Users\Mathe\Documents\UFSC\Micro\racao.X/LCD.h
+"3 C:\Users\Saint\OneDrive\Documentos\Micro\racao.X/LCD.h
 [v _Lcd_Port Lcd_Port `(v  1 e 1 0 ]
 [v i1_Lcd_Port Lcd_Port `(v  1 e 1 0 ]
 "25
@@ -23,33 +23,33 @@
 "96
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
 [v i1_Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
-"5 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
-"505 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\doprnt.c
+"505 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
-"4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\flge.c
+"4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\flge.c
 [v ___flge __flge `(b  1 e 0 0 ]
-"43 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\fltol.c
+"43 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
-"5 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lwdiv.c
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
-"5 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lwmod.c
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
-"10 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\sprcadd.c
+"10 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\sprcadd.c
 [v ___fladd __fladd `(d  1 e 4 0 ]
-"8 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\sprcdiv.c
+"8 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\sprcdiv.c
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
-"8 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\sprcmul.c
+"8 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
-"4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul8_16.c
+"4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
-"10 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\xxtofl.c
+"10 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
-"6 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\pic\__eeprom.c
+"6 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\pic\__eeprom.c
 [v ___eecpymem __eecpymem `(v  1 e 1 0 ]
 "39
 [v ___memcpyee __memcpyee `(v  1 e 1 0 ]
-"50 C:\Users\Mathe\Documents\UFSC\Micro\racao.X\newmain.c
+"50 C:\Users\Saint\OneDrive\Documentos\Micro\racao.X\newmain.c
 [v _tes tes `II(v  1 e 1 0 ]
 "78
 [v _PesoEstoque PesoEstoque `(f  1 e 4 0 ]
@@ -232,9 +232,9 @@
 [v _RC7 RC7 `VEb  1 e 0 @63 ]
 "2890
 [v _TMR1IF TMR1IF `VEb  1 e 0 @96 ]
-"358 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\doprnt.c
+"358 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
 [v _dpowers dpowers `DC[5]ui  1 s 10 dpowers ]
-"41 C:\Users\Mathe\Documents\UFSC\Micro\racao.X\newmain.c
+"41 C:\Users\Saint\OneDrive\Documentos\Micro\racao.X\newmain.c
 [v _aux_lcd aux_lcd `i  1 e 2 0 ]
 "43
 [v _aux_timer aux_timer `i  1 e 2 0 ]
@@ -253,25 +253,25 @@
 {
 "292
 } 0
-"4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\flge.c
+"4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\flge.c
 [v ___flge __flge `(b  1 e 0 0 ]
 {
 [v ___flge@ff1 ff1 `d  1 p 4 30 ]
 [v ___flge@ff2 ff2 `d  1 p 4 34 ]
 "19
 } 0
-"109 C:\Users\Mathe\Documents\UFSC\Micro\racao.X\newmain.c
+"109 C:\Users\Saint\OneDrive\Documentos\Micro\racao.X\newmain.c
 [v _Lcd_Padrao Lcd_Padrao `(v  1 e 1 0 ]
 {
 "110
-[v Lcd_Padrao@buffer buffer `[20]uc  1 a 20 32 ]
+[v Lcd_Padrao@buffer buffer `[20]uc  1 a 20 33 ]
 "112
-[v Lcd_Padrao@nivel_estoque nivel_estoque `i  1 a 2 54 ]
+[v Lcd_Padrao@nivel_estoque nivel_estoque `i  1 a 2 55 ]
 "111
-[v Lcd_Padrao@nivel_cambuca nivel_cambuca `i  1 a 2 52 ]
+[v Lcd_Padrao@nivel_cambuca nivel_cambuca `i  1 a 2 53 ]
 "149
 } 0
-"505 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\doprnt.c
+"505 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
 {
 [v sprintf@sp sp `*.4uc  1 a 1 wreg ]
@@ -292,7 +292,7 @@
 [v sprintf@sp sp `*.4uc  1 a 1 29 ]
 "1567
 } 0
-"5 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lwmod.c
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwmod.c
 [v ___lwmod __lwmod `(ui  1 e 2 0 ]
 {
 "10
@@ -302,7 +302,7 @@
 [v ___lwmod@dividend dividend `ui  1 p 2 14 ]
 "25
 } 0
-"5 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\lwdiv.c
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\lwdiv.c
 [v ___lwdiv __lwdiv `(ui  1 e 2 0 ]
 {
 "10
@@ -314,7 +314,7 @@
 [v ___lwdiv@dividend dividend `ui  1 p 2 6 ]
 "30
 } 0
-"43 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\fltol.c
+"43 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\fltol.c
 [v ___fltol __fltol `(l  1 e 4 0 ]
 {
 "45
@@ -324,7 +324,7 @@
 [v ___fltol@f1 f1 `d  1 p 4 13 ]
 "70
 } 0
-"8 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\sprcmul.c
+"8 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\sprcmul.c
 [v ___flmul __flmul `(d  1 e 4 0 ]
 {
 [s S747 . 4 `uc 1 a 1 0 `uc 1 b 1 1 `uc 1 c 1 2 `uc 1 d 1 3 ]
@@ -349,7 +349,7 @@
 [v ___flmul@a a `d  1 p 4 34 ]
 "205
 } 0
-"4 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\Umul8_16.c
+"4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\Umul8_16.c
 [v __Umul8_16 _Umul8_16 `(ui  1 e 2 0 ]
 {
 [v __Umul8_16@multiplier multiplier `uc  1 a 1 wreg ]
@@ -363,7 +363,7 @@
 [v __Umul8_16@multiplier multiplier `uc  1 a 1 12 ]
 "60
 } 0
-"8 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\sprcdiv.c
+"8 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\sprcdiv.c
 [v ___fldiv __fldiv `(d  1 e 4 0 ]
 {
 "21
@@ -383,20 +383,20 @@
 [v ___fldiv@b b `d  1 p 4 60 ]
 "185
 } 0
-"5 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\awdiv.c
+"5 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\awdiv.c
 [v ___awdiv __awdiv `(i  1 e 2 0 ]
 {
 "10
-[v ___awdiv@quotient quotient `i  1 a 2 27 ]
+[v ___awdiv@quotient quotient `i  1 a 2 28 ]
 "11
-[v ___awdiv@sign sign `uc  1 a 1 26 ]
-[v ___awdiv@counter counter `uc  1 a 1 25 ]
+[v ___awdiv@sign sign `uc  1 a 1 27 ]
+[v ___awdiv@counter counter `uc  1 a 1 26 ]
 "5
-[v ___awdiv@divisor divisor `i  1 p 2 21 ]
-[v ___awdiv@dividend dividend `i  1 p 2 23 ]
+[v ___awdiv@divisor divisor `i  1 p 2 22 ]
+[v ___awdiv@dividend dividend `i  1 p 2 24 ]
 "41
 } 0
-"78 C:\Users\Mathe\Documents\UFSC\Micro\racao.X\newmain.c
+"78 C:\Users\Saint\OneDrive\Documentos\Micro\racao.X\newmain.c
 [v _PesoEstoque PesoEstoque `(f  1 e 4 0 ]
 {
 "80
@@ -410,7 +410,7 @@
 [v PesoCambuca@peso peso `f  1 a 4 26 ]
 "107
 } 0
-"10 C:\Program Files\Microchip\xc8\v2.40\pic\sources\c90\common\xxtofl.c
+"10 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\xxtofl.c
 [v ___xxtofl __xxtofl `(d  1 e 4 0 ]
 {
 [v ___xxtofl@sign sign `uc  1 a 1 wreg ]
@@ -425,7 +425,7 @@
 [v ___xxtofl@sign sign `uc  1 a 1 12 ]
 "44
 } 0
-"96 C:\Users\Mathe\Documents\UFSC\Micro\racao.X/LCD.h
+"96 C:\Users\Saint\OneDrive\Documentos\Micro\racao.X/LCD.h
 [v _Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
 {
 "98
@@ -452,14 +452,14 @@
 {
 [v Lcd_Set_Cursor@a a `uc  1 a 1 wreg ]
 "42
-[v Lcd_Set_Cursor@temp temp `uc  1 a 1 13 ]
-[v Lcd_Set_Cursor@y y `uc  1 a 1 12 ]
-[v Lcd_Set_Cursor@z z `uc  1 a 1 11 ]
+[v Lcd_Set_Cursor@temp temp `uc  1 a 1 14 ]
+[v Lcd_Set_Cursor@y y `uc  1 a 1 13 ]
+[v Lcd_Set_Cursor@z z `uc  1 a 1 12 ]
 "40
 [v Lcd_Set_Cursor@a a `uc  1 a 1 wreg ]
 [v Lcd_Set_Cursor@b b `uc  1 p 1 8 ]
 "43
-[v Lcd_Set_Cursor@a a `uc  1 a 1 10 ]
+[v Lcd_Set_Cursor@a a `uc  1 a 1 11 ]
 "59
 } 0
 "34
@@ -490,12 +490,12 @@
 [v Lcd_Port@a a `uc  1 a 1 4 ]
 "24
 } 0
-"50 C:\Users\Mathe\Documents\UFSC\Micro\racao.X\newmain.c
+"50 C:\Users\Saint\OneDrive\Documentos\Micro\racao.X\newmain.c
 [v _tes tes `II(v  1 e 1 0 ]
 {
 "76
 } 0
-"96 C:\Users\Mathe\Documents\UFSC\Micro\racao.X/LCD.h
+"96 C:\Users\Saint\OneDrive\Documentos\Micro\racao.X/LCD.h
 [v i1_Lcd_Write_String Lcd_Write_String `(v  1 e 1 0 ]
 {
 "98
@@ -522,14 +522,14 @@
 {
 [v i1Lcd_Set_Cursor@a a `uc  1 a 1 wreg ]
 "42
-[v i1Lcd_Set_Cursor@temp temp `uc  1 a 1 9 ]
-[v i1Lcd_Set_Cursor@y y `uc  1 a 1 8 ]
-[v i1Lcd_Set_Cursor@z z `uc  1 a 1 7 ]
+[v i1Lcd_Set_Cursor@temp temp `uc  1 a 1 10 ]
+[v i1Lcd_Set_Cursor@y y `uc  1 a 1 9 ]
+[v i1Lcd_Set_Cursor@z z `uc  1 a 1 8 ]
 "40
 [v i1Lcd_Set_Cursor@a a `uc  1 a 1 wreg ]
 [v i1Lcd_Set_Cursor@b b `uc  1 p 1 4 ]
 "43
-[v i1Lcd_Set_Cursor@a a `uc  1 a 1 6 ]
+[v i1Lcd_Set_Cursor@a a `uc  1 a 1 7 ]
 "59
 } 0
 "34
