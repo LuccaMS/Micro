@@ -137,15 +137,8 @@ void Lcd_Padrao(){
         sprintf(buffer, "Cambuca = %d%%", nivel_cambuca);
         Lcd_Set_Cursor(2,1);
         Lcd_Write_String(buffer);
+        CLRWDT();
     }
-    /*
-    Lcd_Clear();  //limpa LCD
-    Lcd_Set_Cursor(1,1);
-    Lcd_Write_String("SIGMA DOG");
-    Lcd_Set_Cursor(2,1);
-    Lcd_Write_String("GRINDSET");
-    CLRWDT(); */
-    
 }
 
 void main(void) {
@@ -160,7 +153,7 @@ void main(void) {
     PORTD = 0;
     
     INTCONbits.GIE = 1; //ativa as interrupt
-    INTCONbits.PEIE = 1;
+    INTCONbits.PEIE = 1; //ativa a int dos periféricos
     INTCONbits.INTE=1; //RB0 como interrupt
     
     PIE1bits.TMR1IE = 1; //ativa o timer
@@ -181,9 +174,11 @@ void main(void) {
     ADCON1bits.PCFG1 = 0;
     ADCON1bits.PCFG2 = 0;
     ADCON1bits.PCFG3 = 0;
+    //config do PORTA ad
 	
 	ADCON0bits.ADCS0 = 0;   
     ADCON0bits.ADCS1 = 0;   
+    //com os dois ADCS aqui temos FOSC/2
     
     ADCON1bits.ADFM = 0; //setando para 8 bits, caso queira 10 bits bote como 1
     
@@ -196,10 +191,13 @@ void main(void) {
     
     //abaixo estamos setando as configs do Watchdog time, apesar de acima já termos configurado, só para ter certeza
     OPTION_REGbits.PSA = 1; 
+    //ativando de fato o watchdog apesar de termos feito isso lá em cima
     
     OPTION_REGbits.PS0 = 1;
     OPTION_REGbits.PS1 = 1;
     OPTION_REGbits.PS2 = 1;
+    //com esses bits acima temos 2304ms de watchdog
+
 
     CLRWDT();
     Lcd_Init();
@@ -234,7 +232,7 @@ void main(void) {
                 Lcd_Set_Cursor(1,1);
                 Lcd_Write_String("RACAO COLOCADA.");
                 __delay_ms(2000);
-                Lcd_Padrao();
+                aux_lcd = 0;
             }     
         }
         if(PesoCambuca()<= 51 && PesoEstoque() > 51 && interrupcao == 0){

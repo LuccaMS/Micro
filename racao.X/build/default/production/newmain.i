@@ -2048,8 +2048,8 @@ void Lcd_Padrao(){
         sprintf(buffer, "Cambuca = %d%%", nivel_cambuca);
         Lcd_Set_Cursor(2,1);
         Lcd_Write_String(buffer);
+        __asm("clrwdt");
     }
-# 149 "newmain.c"
 }
 
 void main(void) {
@@ -2138,7 +2138,7 @@ void main(void) {
                 Lcd_Set_Cursor(1,1);
                 Lcd_Write_String("RACAO COLOCADA.");
                 _delay((unsigned long)((2000)*(4000000/4000.0)));
-                Lcd_Padrao();
+                aux_lcd = 0;
             }
         }
         if(PesoCambuca()<= 51 && PesoEstoque() > 51 && interrupcao == 0){

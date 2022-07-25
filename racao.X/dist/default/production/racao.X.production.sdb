@@ -57,7 +57,7 @@
 [v _PesoCambuca PesoCambuca `(f  1 e 4 0 ]
 "109
 [v _Lcd_Padrao Lcd_Padrao `(v  1 e 1 0 ]
-"151
+"144
 [v _main main `(v  1 e 1 0 ]
 "166 C:/Program Files (x86)/Microchip/MPLABX/v5.35/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\pic\include\proc\pic16f877a.h
 [v _PORTA PORTA `VEuc  1 e 1 @5 ]
@@ -248,10 +248,10 @@
 [v _aux_estoque aux_estoque `i  1 e 2 0 ]
 "48
 [v _aux_aviso aux_aviso `i  1 e 2 0 ]
-"151
+"144
 [v _main main `(v  1 e 1 0 ]
 {
-"289
+"282
 } 0
 "4 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\flge.c
 [v ___flge __flge `(b  1 e 0 0 ]
@@ -269,7 +269,7 @@
 [v Lcd_Padrao@nivel_estoque nivel_estoque `i  1 a 2 55 ]
 "111
 [v Lcd_Padrao@nivel_cambuca nivel_cambuca `i  1 a 2 53 ]
-"149
+"142
 } 0
 "505 C:\Program Files\Microchip\xc8\v2.36\pic\sources\c90\common\doprnt.c
 [v _sprintf sprintf `(i  1 e 2 0 ]
